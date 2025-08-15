@@ -1,0 +1,78 @@
+.holder {
+    text-align: center;
+    display: flex;
+    gap: 20px;
+    height: 100vh;
+    background: url(C:\Users\Nekur\registerlogin\registerlogin\public\background.jfif);
+}
+.image-left {
+    background: url(C:\Users\Nekur\registerlogin\registerlogin\public\secondhand.jpg);
+    background-repeat: no-repeat;
+    width: 70%;
+    color: rgb(230, 188, 188);
+    align-items: center;
+}
+.box-login {
+    background-color: white;
+    width: 50%;
+    box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+}
+.title {
+    font-size: 35px;
+    font-weight: 500;
+}
+.title-left {
+font-size: 25px;
+}
+.subtitle-left {
+font-size: 20px;
+}
+.font-login {
+    font-size: 35px;
+    font-weight: 400;
+    margin-bottom: 0;
+}
+.input-email {
+    font-size: 28px;
+    margin: 10px ;
+    margin-top: 70px;
+    border: 0;
+}
+.input-email:hover {
+    border: 2px solid;
+    
+}
+.input-password {
+    font-size: 28px;
+    margin-bottom: 50px; 
+}
+.input-password:hover {
+    
+}
+.button-login {
+    font-size: 25px;
+    width: 180px;
+    height: 50px;
+    border: 1px solid rgb(239, 198, 236);
+    background-color: rgb(247, 244, 250);
+    margin-right: 8px;
+    box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+    transition: 250ms ease;
+}
+.button-register {
+    font-size: 25px;
+    width: 180px;
+    height: 50px;
+    border: 1px solid rgb(239, 198, 236);
+    background-color: rgb(247, 244, 250);
+    box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+    transition: 250ms ease;
+}
+.button-login:hover {
+    background-color: rgb(242, 229, 255);
+    cursor: pointer;
+}
+.button-register:hover {
+   background-color: rgb(242, 229, 255);
+    cursor: pointer;
+}
