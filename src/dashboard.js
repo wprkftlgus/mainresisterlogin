@@ -12,13 +12,24 @@ function Dashboard(){
         navigate('/');
     }
 
-    const handleDeletePost = async() => {
+    const handleDeletePost = async(postId) => {
         try{
-            const res = await fetch('http://localhost:5000/api/delete', {
-                method: 'DELETE'
-
+            const res = await fetch('http://localhost:5000/api/posts/delete', {
+                method: 'DELETE',
+                headers: {
+                    'Content-Type' : 'application/json',
+                    'Authorization': `Bearer ${token}`,
+                },
+                body: JSON.stringify({ id: postId})
             });
 
+          const data = await res.json();
+            if(res.ok){
+                setPosts(posts.filter(post => post._id !== postId));
+                alert(data.message);
+            } else{
+                alert(data.error);
+            }
         }
         catch(err){
             console.log('Error happened...');
@@ -47,7 +58,7 @@ function Dashboard(){
       <h2>Posts</h2>
       {posts.map(post => 
       (<div>{post.title}<h2>{post.content}</h2><h2>{post.file}</h2>
-      <button onClick={() => {handleDeletePost()}}>remove</button></div>))}
+      <button onClick={() => {handleDeletePost(post._id)}}>remove</button></div>))}
       
       <div>
         <button onClick={() => {

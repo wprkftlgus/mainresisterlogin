@@ -33,12 +33,12 @@ router.delete('/delete' ,authMiddleware, async (req, res) => {
         const userId = req.user.id;
         const {id} = req.body;
         const post = await Post.findById(id);
-
+        
         if(!post){
-            return res.status(402).json({ error : 'No post found'});
+            return res.status(404).json({ error : 'No post found'});
         }
 
-        if(userId !== post.author){
+        if(userId !== post.author.toString()){
             return res.status(403).json({ error: 'You are not allowed to delete others post'});
         }
             await Post.findByIdAndDelete(id);
