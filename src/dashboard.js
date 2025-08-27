@@ -12,6 +12,20 @@ function Dashboard(){
         navigate('/');
     }
 
+    const handleDeletePost = async() => {
+        try{
+            const res = await fetch('http://localhost:5000/api/delete', {
+                method: 'DELETE'
+
+            });
+
+        }
+        catch(err){
+            console.log('Error happened...');
+            alert('something wrong');
+        }
+    }
+
     useEffect(() => {
         const fetchPosts = async() => {
             try {
@@ -27,11 +41,14 @@ function Dashboard(){
     },[]);
     
     
+
     return(
     <div>
       <h2>Posts</h2>
-      {posts.map(post => (<h3>{post.title}</h3>))}
-      {posts.map(post => (<h2>{post.content}</h2>))}
+      {posts.map(post => 
+      (<div>{post.title}<h2>{post.content}</h2><h2>{post.file}</h2>
+      <button onClick={() => {handleDeletePost()}}>remove</button></div>))}
+      
       <div>
         <button onClick={() => {
             if(!token){

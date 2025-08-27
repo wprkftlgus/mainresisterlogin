@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 function CreatePost(){
     const [title, setTitle] = useState();
     const [content, setContent] = useState();
+    const [file, setFile] = useState(null);
     const Navigate = useNavigate();
     
     const handleSubmit = async () => {
@@ -11,10 +12,10 @@ function CreatePost(){
         const formData = new FormData();
         formData.append('title', title);
         formData.append('content', content);
-        
+        formData.append('file', file);
         
         const res = await fetch('http://localhost:5000/api/posts/create', {
-            method: 'Post' ,
+            method: 'POST' ,
             headers: { 'Authorization': `Bearer ${token}`},
             body: formData
         });
@@ -37,6 +38,7 @@ function CreatePost(){
             <h2>Create Post</h2>
             <input type='text' placeholder='Title' value={title} onChange={(e) => {setTitle(e.target.value)}} />
             <textarea placeholder="Content" value={content} onChange={e => setContent(e.target.value)} />
+            <input type="file" onChange={e => setFile(e.target.files[0])} />
             <button onClick={handleSubmit}>Upload Post</button>    
             <button onClick={() => {Navigate('/dashboard')}}>Go back to dashboard</button>
         </div>
