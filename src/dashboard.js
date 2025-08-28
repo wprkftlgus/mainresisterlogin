@@ -1,5 +1,6 @@
 import React, { useState, useEffect }from 'react';
 import { useNavigate } from 'react-router-dom';
+import './dashboard.css';
 
 function Dashboard(){
     const [posts, setPosts] = useState([]);
@@ -13,6 +14,10 @@ function Dashboard(){
     }
 
     const handleDeletePost = async(postId) => {
+        if(!token){
+            alert('You need to login to delete posts!');
+            return;
+        }
         try{
             const res = await fetch('http://localhost:5000/api/posts/delete', {
                 method: 'DELETE',
@@ -23,7 +28,8 @@ function Dashboard(){
                 body: JSON.stringify({ id: postId})
             });
 
-          const data = await res.json();
+             const data = await res.json();
+
             if(res.ok){
                 setPosts(posts.filter(post => post._id !== postId));
                 alert(data.message);
@@ -54,12 +60,19 @@ function Dashboard(){
     
 
     return(
-    <div>
-      <h2>Posts</h2>
+    <div className='whole'>
+      <div className='section-left'>
+      <div className='button-left-section'>Posts</div>
+      <div className='button-left-section'>About</div>
+      </div>
+      <div className='contentholder-Posts'>
+      <h2 className='Posts'>Posts</h2>
       {posts.map(post => 
-      (<div>{post.title}<h2>{post.content}</h2><h2>{post.file}</h2>
-      <button onClick={() => {handleDeletePost(post._id)}}>remove</button></div>))}
-      
+      (<div className='post-box'>{post.title}
+      <h2>{post.content}</h2>
+      <h2>{post.file}</h2>
+      <button onClick={() => {handleDeletePost(post._id)}}>remove</button>
+      </div>))}
       <div>
         <button onClick={() => {
             if(!token){
@@ -68,6 +81,7 @@ function Dashboard(){
             return;}
             navigate('/CreatePost')}}>Create post</button>
         <button onClick={() => {handleLogout()}}>Log out</button>    
+      </div>
       </div>
     </div>
     )

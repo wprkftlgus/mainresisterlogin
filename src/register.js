@@ -1,10 +1,11 @@
 import React , { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function Register() {
   const [regEmail, setRegEmail] = useState('');
   const [regPassword, setRegPassword] = useState('');
   const [message, setMessage] = useState('');
-
+  const navigate = useNavigate();
    const handleRegister = async () => {
     try {
       const res = await fetch('http://localhost:5000/api/register', {
@@ -15,6 +16,7 @@ function Register() {
       const data = await res.json();
       if (data.message) {
       alert(data.message);
+      navigate('/');
     }  else if (data.error) {
       alert(data.error);
     }

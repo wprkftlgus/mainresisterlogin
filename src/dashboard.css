@@ -1,0 +1,29 @@
+.whole {
+    display: flex;
+}
+.section-left {
+    align-items: center;
+    text-align: center;
+    width: 80px;
+    background-color: black;
+    color: white;
+    margin: 50px 10px 20px 10px;
+    border-radius: 10px;
+}
+.button-left-section {
+    cursor: pointer;
+    display: inline-block;
+    margin: 0 20px 0 20px;
+}
+.contentholder-Posts{
+    width: 80%;
+}
+.title-posts {
+    width: 1000px;
+}
+.post-box {
+    width: 100%;
+    margin: 50px;
+    background-color: rgb(237, 239, 239);
+    border-radius: 10px;
+}
