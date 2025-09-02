@@ -3,10 +3,17 @@
     display: flex;
     gap: 20px;
     height: 100vh;
+<<<<<<< HEAD
     background: url(C:\Users\Nekur\registerlogin\registerlogin\public\background.jfif);
 }
 .image-left {
     background: url(C:\Users\Nekur\registerlogin\registerlogin\public\secondhand.jpg);
+=======
+    background: url(C:\Users\-.-\Desktop\mainresisterlogin-master\mainresisterlogin-master\public\background.jfif);
+}
+.image-left {
+    background: url(C:\Users\-.-\Desktop\mainresisterlogin-master\mainresisterlogin-master\public\secondhand.jpg);
+>>>>>>> 1b03d93 (commit in korea)
     background-repeat: no-repeat;
     width: 70%;
     color: rgb(230, 188, 188);
