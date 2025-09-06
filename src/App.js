@@ -4,6 +4,7 @@ import ResisterPage from './register';
 import LoginPage from './login';
 import Dashboard from './dashboard';
 import CreatePost from './CreatePost';
+import About from './about';
 
 
 
@@ -15,6 +16,7 @@ function App() {
         <Route path="/register" element={<ResisterPage />} />
         <Route path='/dashboard' element={<Dashboard />} ></Route>
         <Route path='/createpost' element={<CreatePost />} ></Route>
+        <Route path='/About' element={<About />}></Route>
       </Routes>
     </Router>
   );

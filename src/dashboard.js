@@ -1,87 +1,33 @@
 import React, { useState, useEffect }from 'react';
 import { useNavigate } from 'react-router-dom';
 import './dashboard.css';
+import Aboutcontent from './Aboutcontent';
+import Dashboardcontent from './Dashboardcontent';
 
 function Dashboard(){
-    const [posts, setPosts] = useState([]);
+    const [active, setActive] = useState("dashboard");
+    const [value, setValue] =useState();
     const navigate = useNavigate();
-    const token = localStorage.getItem('token');
-
-    const handleLogout = () => {
-        localStorage.removeItem('token');
-        alert('You have been logged out.');
-        navigate('/');
-    }
-
-    const handleDeletePost = async(postId) => {
-        if(!token){
-            alert('You need to login to delete posts!');
-            return;
-        }
-        try{
-            const res = await fetch('http://localhost:5000/api/posts/delete', {
-                method: 'DELETE',
-                headers: {
-                    'Content-Type' : 'application/json',
-                    'Authorization': `Bearer ${token}`,
-                },
-                body: JSON.stringify({ id: postId})
-            });
-
-             const data = await res.json();
-
-            if(res.ok){
-                setPosts(posts.filter(post => post._id !== postId));
-                alert(data.message);
-            } else{
-                alert(data.error);
-            }
-        }
-        catch(err){
-            console.log('Error happened...');
-            alert('something wrong');
-        }
-    }
-
-    useEffect(() => {
-        const fetchPosts = async() => {
-            try {
-            const res = await fetch('http://localhost:5000/api/posts');
-            const data = await res.json();
-            setPosts(data);
-            }
-            catch(err){
-                console.error('Error happened...');
-            }
-        };
-        fetchPosts();
-    },[]);
-    
-    
 
     return(
-    <div className='whole'>
+        <div className='whole'>
       <div className='section-left'>
-      <div className='button-left-section'>Posts</div>
-      <div className='button-left-section'>About</div>
+      <div onClick={() => {
+        navigate('/dashboard');
+        if (active !== "dashboard") {setActive("dashboard")}
+        else {setActive("")}
+      }} className={active === "dashboard" ? "button-left-section-true" : "button-left-section-false"}>
+        <img className='icon-dashboard' src='/dashboard.png'></img><div className='icon-name'>Dashboard</div>
+      </div>
+      <div onClick={() => {
+        if (active !== "about") {setActive("about")}
+        else {setActive("")}
+      }} className={active === "about" ? "button-left-section-true" : "button-left-section-false"}>About
+      </div>
       </div>
       <div className='contentholder-Posts'>
-      <h2 className='Posts'>Posts</h2>
-      {posts.map(post => 
-      (<div className='post-box'>{post.title}
-      <h2>{post.content}</h2>
-      <h2>{post.file}</h2>
-      <button onClick={() => {handleDeletePost(post._id)}}>remove</button>
-      </div>))}
-      <div>
-        <button onClick={() => {
-            if(!token){
-            alert('You need to login to post!');
-            navigate('/');
-            return;}
-            navigate('/CreatePost')}}>Create post</button>
-        <button onClick={() => {handleLogout()}}>Log out</button>    
-      </div>
+      <div>{active === "dashboard" && <Dashboardcontent />}</div>
+      <div>{active === "about" && <Aboutcontent />}</div>
       </div>
     </div>
     )

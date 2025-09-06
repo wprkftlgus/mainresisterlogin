@@ -3,20 +3,57 @@
 }
 .section-left {
     align-items: center;
-    text-align: center;
-    width: 80px;
-    background-color: black;
-    color: white;
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    background-color: rgb(237, 239, 239);
+    color: black;
     margin: 50px 10px 20px 10px;
     border-radius: 10px;
 }
-.button-left-section {
+.button-left-section-true {
     cursor: pointer;
-    display: inline-block;
+    display: flex;
     margin: 0 20px 0 20px;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(185, 248, 200);
+}
+.button-left-section-false {
+    cursor: pointer;
+    display: flex;
+    margin: 0 20px 0 20px;
+    align-items: center;
+    justify-content: center;
+}
+.button-left-section-false:hover {
+    background-color: rgb(185, 248, 200);
+}
+.icon-name {
+    display: inline-block;
+    font-size: 20px;
+    padding-left: 10px;
 }
 .contentholder-Posts{
     width: 80%;
+}
+.searchbox {
+    border-radius: 20px;
+    width: 500px;
+    align-items: center;
+    background-color: rgb(237, 239, 239);
+}
+.img-search {
+    width: 20px;
+    padding: 5px 5px 0 12px;
+}
+.search {
+    padding: 5px 5px 5px 5px;
+    border: 0;
+    font-size: 20px;
+    outline: none;
+    width: 80%;
+    background-color: rgb(237, 239, 239);
 }
 .title-posts {
     width: 1000px;
@@ -26,4 +63,25 @@
     margin: 50px;
     background-color: rgb(237, 239, 239);
     border-radius: 10px;
+}
+.icon-dashboard {
+    cursor: pointer;
+    width: 25px;
+    transition: 0.1s ;
+}
+.icon-post {
+    cursor: pointer;
+    width: 50px;
+    transition: 0.1s ;
+}
+.icon-post:hover {
+    width: 55px;
+}
+.icon-logout {
+    cursor: pointer;
+    width: 50px;
+    transition: 0.1s ;
+}
+.icon-logout:hover {
+    width: 55px;
 }
