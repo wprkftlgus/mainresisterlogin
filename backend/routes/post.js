@@ -19,9 +19,19 @@ router.post('/create', authMiddleware,  upload.single('file'), async (req, res) 
     }
 });
 
+router.get('/posts/postDetail/:id', async (req,res) => {
+    try {
+        const post = await Post.findById(req.params.id).populate();
+        if(!post){ return res.status(404).json({ message: "Post not found" });}
+        res.json(post);
+    } catch(err){
+        res.status(500).json({ error: 'Failed'});
+    }
+});
+
 router.get('/', async (req, res) => {
     try {
-        const posts = await Post.find().sort({ createdAt: -1});
+        const posts = await Post.find().populate('author', 'username email').sort({ createdAt: -1});
         res.json(posts);
     } catch(err){
          res.status(500).json({ error: 'Failed to fetch posts' });

@@ -12,18 +12,25 @@ function Dashboard(){
     return(
         <div className='whole'>
       <div className='section-left'>
+      <div className='category-leftsection'>MENU</div>
       <div onClick={() => {
         navigate('/dashboard');
         if (active !== "dashboard") {setActive("dashboard")}
         else {setActive("")}
       }} className={active === "dashboard" ? "button-left-section-true" : "button-left-section-false"}>
-        <img className='icon-dashboard' src='/dashboard.png'></img><div className='icon-name'>Dashboard</div>
+        <img className='icon' src='/dashboard.png'></img><div className='icon-name'>Dashboard</div>
       </div>
       <div onClick={() => {
         if (active !== "about") {setActive("about")}
         else {setActive("")}
-      }} className={active === "about" ? "button-left-section-true" : "button-left-section-false"}>About
+      }} className={active === "about" ? "button-left-section-true" : "button-left-section-false"}>
+        <img className='icon' src='/about.png'></img><div className='icon-name'>About</div>
       </div>
+      <div className='category-leftsection'>GENERAL</div>
+      <div onClick={() => {
+        if (active !== "logout"){setActive("logout")}
+        
+      }} className='icon-name'>Logout</div>
       </div>
       <div className='contentholder-Posts'>
       <div>{active === "dashboard" && <Dashboardcontent />}</div>

@@ -1,0 +1,63 @@
+.holder-createPost {
+    background-color: rgb(237, 239, 239);
+    height: 90%;
+    width: 60%;
+    margin: 0 auto;
+    border-radius: 25px;
+}
+.icon-back {
+    width: 60px;
+    cursor: pointer;
+    margin: 20px;
+    transition: 0.2s;
+
+}
+.icon-back:hover {
+    filter: invert(50%) sepia(20%) saturate(0%) hue-rotate(0deg) brightness(90%) contrast(90%);
+}
+.div-box-input {
+    margin-bottom: 20px;
+}
+.title-createPost {
+    margin-left: 20px;
+    font-size: 40px;
+    animation: fadein-buttomToTop 1s ease ;
+}
+.box-input {
+    display: inline-block;
+    border-radius: 20px;
+    border: solid 1px transparent;
+    margin-left: 20px;
+}
+.box-input:hover {
+    border: solid 1px rgb(109, 107, 107);
+    margin-left: 20px;
+}
+.input-title {
+    border-radius: 20px;
+    border-style: none;
+    outline: none;
+    font-size: 20px;
+    padding: 10px;
+}
+.input-content {
+    border-radius: 20px;
+    border-style: none;
+    outline: none;
+    font-size: 20px;
+    padding: 10px;
+    width: 100%;
+    height: 40vh;
+}
+.icon-checked {
+    cursor: pointer;
+    width: 70px;
+    transition: 0.1s;
+}
+.icon-checked:hover {
+     filter: invert(20%) sepia(100%) saturate(3000%) hue-rotate(200deg) brightness(90%) contrast(105%);
+}
+@keyframes fadein-buttomToTop {
+    0% { transform: translateY(20px); opacity: 0;}
+    100% { transform: translateY(0); opacity: 1;}
+}

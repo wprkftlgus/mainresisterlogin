@@ -63,6 +63,7 @@ function Dashboardcontent(){
     }
 
     const [active, setActive] = useState();
+    
 
     return(
     <div className='whole'>
@@ -72,19 +73,28 @@ function Dashboardcontent(){
         <input onChange={(e) => setValue(e.target.value)} value={value} className='search' placeholder='Search'></input>
         {value && <button onClick={(e) => {setValue("")}}>x</button>}
       </div>
-      <h2 className='Posts'>Posts</h2>
+      <h2 className='Title-Dashboard'>Dashboard</h2>
+      <div className='Subtitle-Dashboard'>Sell what you don’t need, get what you want!</div>
+      <div className='posts-container'>
       {posts.map(post => 
-      (<div className='post-box'>{post.title}
+      (<div key={post.id} onClick={() => {
+        navigate('/post/${post.id}')
+      }} className='post-box'>{post.title}
       <h2>{post.content}</h2>
+      <div>Author<h3>{post.author.email}</h3></div>
+      <h1>{post.timestamps}</h1>
       <h2>{post.file}</h2>
-      <button onClick={() => {handleDeletePost(post._id)}}>remove</button>
+      <h2>{post.imageUrl}</h2>
+      <img className='bin' onClick={() => {handleDeletePost(post._id)}} src='/bin.png' />
       </div>))}
+      </div>
       <div>
         <img className='icon-post' onClick={() => {
             if(!token){
             alert('You need to login to post!');
             navigate('/');
             return;}
+            if(!active === "icon-post"){setActive("icon-post")}
             navigate('/CreatePost')}} src='/mores.png'></img>
             <img className='icon-logout' onClick={() => {handleLogout()}} src='/logout.png'></img>   
       </div>

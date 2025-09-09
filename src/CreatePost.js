@@ -1,5 +1,6 @@
 import React, { useState }from 'react';
 import { useNavigate } from 'react-router-dom';
+import './createPost.css';
 
 function CreatePost(){
     const [title, setTitle] = useState();
@@ -34,13 +35,15 @@ function CreatePost(){
         }
     };
     return(
-        <div>
-            <h2>Create Post</h2>
-            <input type='text' placeholder='Title' value={title} onChange={(e) => {setTitle(e.target.value)}} />
-            <textarea placeholder="Content" value={content} onChange={e => setContent(e.target.value)} />
+        <div className='holder-createPost'>
+            <img className='icon-back' onClick={() => {Navigate('/dashboard')}} src='/left-arrow.png'></img>
+            <h2 className='title-createPost'>Create Post</h2>
+            <div className='div-box-input'><div className='box-input'><input className='input-title' type='text' placeholder='Title' value={title} onChange={(e) => {setTitle(e.target.value)}} /></div></div>
+            <div className='box-input'><textarea className='input-content' placeholder="Content" value={content} onChange={e => setContent(e.target.value)} /></div>
             <input type="file" onChange={e => setFile(e.target.files[0])} />
-            <button onClick={handleSubmit}>Upload Post</button>    
-            <button onClick={() => {Navigate('/dashboard')}}>Go back to dashboard</button>
+            <div className='holder-buttom-icon'>
+             <img className='icon-checked' src='/checked.png' onClick={handleSubmit} />
+            </div>
         </div>
     );
 
