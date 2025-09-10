@@ -6,9 +6,10 @@ import Dashboardcontent from './Dashboardcontent';
 
 function Dashboard(){
     const [active, setActive] = useState("dashboard");
-    const [value, setValue] =useState();
+    const [value, setValue] = useState();
+    const [user, setUser] = useState();
     const navigate = useNavigate();
-
+    
     return(
         <div className='whole'>
       <div className='section-left'>

@@ -12,20 +12,19 @@ router.post('/create', authMiddleware,  upload.single('file'), async (req, res) 
         const author = req.user.id;
         const newPost = new Post({ title, content, author});
         await newPost.save();
-
         res.json({ Message: 'Post created!'});
     } catch(err){
         res.status(500).json({ error: 'Failed to upload post'});
     }
 });
 
-router.get('/posts/postDetail/:id', async (req,res) => {
+router.get('/postDetail/:id', async (req,res) => {
     try {
         const post = await Post.findById(req.params.id).populate();
         if(!post){ return res.status(404).json({ message: "Post not found" });}
         res.json(post);
     } catch(err){
-        res.status(500).json({ error: 'Failed'});
+        res.status(500).json({ error: 'Failed to show the detail of post'});
     }
 });
 

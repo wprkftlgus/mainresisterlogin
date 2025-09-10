@@ -13,10 +13,11 @@ function PostDetail(){
         };
         fetchPosts();
     },[id]);
-    console.log({post});
-    
-    if (!post) return <div>no post</div>
-    if (post) return <div>yes post</div>
+    if(data.message){
+        alert(data.message);
+    } if(data.error){
+        alert(data.error);
+    }
     return(
         <div>
         <div>{post.title}</div>

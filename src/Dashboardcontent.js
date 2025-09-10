@@ -63,29 +63,37 @@ function Dashboardcontent(){
     }
 
     const [active, setActive] = useState();
-    
+    const email = localStorage.getItem('email');
 
     return(
     <div className='whole'>
       <div className='contentholder-Posts'>
+      <div className='holder-top'>
       <div className='searchbox'>
         <img src='/search.png' className='img-search'></img>
         <input onChange={(e) => setValue(e.target.value)} value={value} className='search' placeholder='Search'></input>
         {value && <button onClick={(e) => {setValue("")}}>x</button>}
       </div>
+        <div className='holder-profile'>
+          <img className='icon-profile' src='/profile.png' />
+          <div className='useremail'>{email}</div>
+        </div>
+        </div>
       <h2 className='Title-Dashboard'>Dashboard</h2>
       <div className='Subtitle-Dashboard'>Sell what you don’t need, get what you want!</div>
       <div className='posts-container'>
       {posts.map(post => 
       (<div key={post.id} onClick={() => {
-        navigate('/post/${post.id}')
+        navigate(`/post/${post.id}`)
       }} className='post-box'>{post.title}
       <h2>{post.content}</h2>
       <div>Author<h3>{post.author.email}</h3></div>
       <h1>{post.timestamps}</h1>
       <h2>{post.file}</h2>
       <h2>{post.imageUrl}</h2>
-      <img className='bin' onClick={() => {handleDeletePost(post._id)}} src='/bin.png' />
+      <img className='bin' onClick={(e) => {
+        e.stopPropagation();
+        handleDeletePost(post._id)}} src='/bin.png' />
       </div>))}
       </div>
       <div>

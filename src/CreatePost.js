@@ -27,8 +27,8 @@ function CreatePost(){
             Navigate('/dashboard');
             
         }
-        if (data.message) {
-            alert(data.message);
+        if (data.Message) {
+            alert(data.Message);
             Navigate('/dashboard');
         } else {
             alert(data.error);

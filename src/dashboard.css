@@ -45,6 +45,9 @@
     background-color: rgb(237, 239, 239);
     border-radius: 25px;
 }
+.holder-top {
+    
+} 
 .searchbox {
     border-radius: 20px;
     width: 500px;
@@ -134,7 +137,27 @@
     text-align: right;
     padding-right: 60px;
 }
-
+.holder-profile {
+    margin-top: 20px;
+    background-color: white;
+    display:inline-block;
+    border-radius: 20px;
+    padding: 30px;
+    cursor: pointer;
+    transition: 0.1s;
+    border: 1px solid rgb(223, 223, 223);
+}
+.holder-profile:hover {
+    transform: scale(1.1);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+.icon-profile {
+    width: 55px;
+}
+.useremail {
+    font-size: 20px;
+    text-align: center;
+}
 @keyframes fadein-BottomToTop {
     0% { opacity: 0; transform: translateY(20px);}
     100% {opacity: 1; transform: translateY(0px);}
