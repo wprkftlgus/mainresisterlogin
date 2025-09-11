@@ -1,21 +1,35 @@
 .whole {
-    margin-top: 10px;
+    margin-top: 5px;
     display: flex;
+    margin-right: 7px;
 }
 .section-left {
     height: 50vh;
-    align-items: center;
     display: flex;
     flex-direction: column;
     width: 200px;
     background-color: rgb(237, 239, 239);
     color: black;
-    margin: 50px 10px 20px 10px;
+    margin-top: 5px;
+    margin-left: 15px;
+    margin-right: 15px;
     border-radius: 25px;
     animation: fadein-leftToRight 2s ease forwards;
 }
+.container-bug {
+    display: flex;
+    align-items: center;
+}
+.bug {
+    width: 80px;
+}
+.name-website {
+    font-size: 20px;
+}
 .category-leftsection {
     color: rgb(105, 105, 105);
+    padding-top: 40px;
+    padding-left: 20px;
 }
 .button-left-section-true {
     cursor: pointer;
@@ -42,27 +56,33 @@
 }
 .contentholder-Posts{
     width: 100%;
-    background-color: rgb(237, 239, 239);
+    
     border-radius: 25px;
 }
 .holder-top {
-    
+    border-radius: 20px;
+    background-color: rgb(237, 239, 239);
+    display: flex;
+    align-items: center;
 } 
 .searchbox {
+    height: 60px;
     border-radius: 20px;
-    width: 500px;
+    width: 650px;
     align-items: center;
     background-color: rgb(255, 255, 255);
     margin-left: 30px;
     border: 1px solid transparent;
     transition: 0.1s;
+    display: flex;
+    align-items: center;
 }
 .searchbox:hover {
     border: solid 1px rgb(109, 107, 107);
 }
 .img-search {
     width: 20px;
-    padding: 5px 5px 0 12px;
+    padding: 5px 5px 5px 12px;
 }
 .search {
     padding: 5px 5px 5px 5px;
@@ -72,13 +92,18 @@
     width: 80%;
     background-color: rgb(255, 255, 255);
 }
+.container-dashboard {
+    background-color: rgb(237, 239, 239);
+    border-radius: 20px;
+}
 .title-posts {
     width: 1000px;
 }
 .Title-Dashboard {
+    padding-top: 30px;
     margin-left: 30px;
     margin-bottom: 10px;
-    font-size: 30px;
+    font-size: 35px;
     opacity: 0;
     animation: fadein-BottomToTop 1.5s ease 0.4s forwards;
 }
@@ -89,12 +114,13 @@
     animation: fadein-BottomToTop 1.5s ease 0.8s forwards;
 }
 .posts-container {
+    padding-top: 15px;
     display: flex;
     flex-wrap: wrap;
 }
 .post-box {
     width: 600px;
-    margin: 30px;
+    margin: 18px;
     background-color: rgb(255, 255, 255);
     border-radius: 20px;
     animation: fadeScale 1.5s ease 0.8s forwards;
@@ -138,11 +164,13 @@
     padding-right: 60px;
 }
 .holder-profile {
-    margin-top: 20px;
     background-color: white;
-    display:inline-block;
+    display: flex;
+    align-items: center;
     border-radius: 20px;
-    padding: 30px;
+    padding: 12px;
+    margin: 12px;
+    margin-left: 550px;
     cursor: pointer;
     transition: 0.1s;
     border: 1px solid rgb(223, 223, 223);
@@ -152,10 +180,11 @@
     box-shadow: 0 2px 6px rgba(0,0,0,0.15);
 }
 .icon-profile {
-    width: 55px;
+    width: 50px;
+    padding-right: 12px;
 }
 .useremail {
-    font-size: 20px;
+    font-size: 25px;
     text-align: center;
 }
 @keyframes fadein-BottomToTop {

@@ -79,6 +79,7 @@ function Dashboardcontent(){
           <div className='useremail'>{email}</div>
         </div>
         </div>
+      <div className='container-dashboard'>
       <h2 className='Title-Dashboard'>Dashboard</h2>
       <div className='Subtitle-Dashboard'>Sell what you don’t need, get what you want!</div>
       <div className='posts-container'>
@@ -95,6 +96,7 @@ function Dashboardcontent(){
         e.stopPropagation();
         handleDeletePost(post._id)}} src='/bin.png' />
       </div>))}
+      </div>
       </div>
       <div>
         <img className='icon-post' onClick={() => {
