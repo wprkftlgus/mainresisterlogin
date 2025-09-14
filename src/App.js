@@ -6,6 +6,7 @@ import Dashboard from './dashboard';
 import CreatePost from './CreatePost';
 import About from './about';
 import PostDetail from './postDetail';
+import Profile from './profile';
 
 
 
@@ -19,6 +20,7 @@ function App() {
         <Route path='/createpost' element={<CreatePost />} ></Route>
         <Route path='/About' element={<About />}></Route>
         <Route path='/post/:id' element={<PostDetail />}></Route>
+        <Route path='/profile' element={<Profile />}></Route>
       </Routes>
     </Router>
   );

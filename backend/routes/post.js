@@ -5,6 +5,7 @@ const Post = require('../models/Poost.js');
 const multer = require('multer');
 const upload = multer({dest: 'upload/'})
 const jwt = require('jsonwebtoken');
+const User = require('../models/User');
 
 router.post('/create', authMiddleware,  upload.single('file'), async (req, res) => {
     try{
@@ -60,6 +61,18 @@ router.delete('/delete' ,authMiddleware, async (req, res) => {
             res.json({ message: 'Post deleted successfully!'});  
     } catch(err){
         res.status(500).json({ error: 'Failed to delete post'});
+    }
+})
+
+router.delete('/deleteAllPost' , authMiddleware, async (req, res) => {
+    try{
+        const user = await User.findOne(req.body)
+        if(user){
+            Post.deleteMany();
+        }
+        res.json({message : 'delete all!'});
+    } catch(err){
+        res.status(500).json({ error: 'failed to delete!'})
     }
 })
 module.exports = router;

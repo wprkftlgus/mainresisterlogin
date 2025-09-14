@@ -3,14 +3,14 @@
     height: 90%;
     width: 60%;
     margin: 0 auto;
+    margin-top: 50px;
     border-radius: 25px;
+    padding: 20px;
 }
 .icon-back {
     width: 60px;
     cursor: pointer;
-    margin: 20px;
     transition: 0.2s;
-
 }
 .icon-back:hover {
     filter: invert(50%) sepia(20%) saturate(0%) hue-rotate(0deg) brightness(90%) contrast(90%);
@@ -19,7 +19,7 @@
     margin-bottom: 20px;
 }
 .title-createPost {
-    margin-left: 20px;
+    margin-left: 9px;
     font-size: 40px;
     animation: fadein-buttomToTop 1s ease ;
 }
@@ -27,11 +27,11 @@
     display: inline-block;
     border-radius: 20px;
     border: solid 1px transparent;
-    margin-left: 20px;
+    
 }
 .box-input:hover {
     border: solid 1px rgb(109, 107, 107);
-    margin-left: 20px;
+    
 }
 .input-title {
     border-radius: 20px;

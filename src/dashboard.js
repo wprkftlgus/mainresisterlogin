@@ -9,6 +9,12 @@ function Dashboard(){
     const [value, setValue] = useState();
     const [user, setUser] = useState();
     const navigate = useNavigate();
+
+    const handleLogout = () => {
+        localStorage.removeItem('token');
+        alert('You have been logged out.');
+        navigate('/');
+    }
     
     return(
         <div className='whole'>
@@ -32,10 +38,10 @@ function Dashboard(){
         <img className='icon' src='/about.png'></img><div className='icon-name'>About</div>
       </div>
       <div className='category-leftsection'>GENERAL</div>
-      <div onClick={() => {
-        if (active !== "logout"){setActive("logout")}
-        
-      }} className='icon-name'>Logout</div>
+      <div className='holder-logout' onClick={() => {handleLogout()}}>
+            <img className='icon-logout' src='/logout.png'></img>
+            <div className='font-logout'>Logout</div>   
+      </div>
       </div>
       <div className='contentholder-Posts'>
       <div>{active === "dashboard" && <Dashboardcontent />}</div>

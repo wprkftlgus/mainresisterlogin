@@ -9,19 +9,27 @@ function CreatePost(){
     const Navigate = useNavigate();
     
     const handleSubmit = async () => {
+        if(!title){
+            alert('You can not empty the title');
+            return ;
+        }
+        if(!content){
+            alert('You can not empty the content');
+            return ;
+        }
+
         const token = localStorage.getItem('token');
         const formData = new FormData();
         formData.append('title', title);
         formData.append('content', content);
         formData.append('file', file);
-        
+
         const res = await fetch('http://localhost:5000/api/posts/create', {
             method: 'POST' ,
             headers: { 'Authorization': `Bearer ${token}`},
             body: formData
         });
         const data = await res.json();
-        
         if(!token){
             alert('You need to login to post!');
             Navigate('/dashboard');

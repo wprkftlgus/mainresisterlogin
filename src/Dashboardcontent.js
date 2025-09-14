@@ -5,6 +5,7 @@ import './dashboard.css';
 function Dashboardcontent(){
     const [posts, setPosts] = useState([]);
     const [value, setValue] =useState();
+    const [favorite, setFavorite] = useState();
     const navigate = useNavigate();
     const token = localStorage.getItem('token');
 
@@ -74,39 +75,51 @@ function Dashboardcontent(){
         <input onChange={(e) => setValue(e.target.value)} value={value} className='search' placeholder='Search'></input>
         {value && <button onClick={(e) => {setValue("")}}>x</button>}
       </div>
-        <div className='holder-profile'>
+        <div onClick={() => {
+          navigate('/Profile');
+        }} className='holder-profile'>
           <img className='icon-profile' src='/profile.png' />
           <div className='useremail'>{email}</div>
         </div>
         </div>
       <div className='container-dashboard'>
+      <div className='holder-dashboard'>
       <h2 className='Title-Dashboard'>Dashboard</h2>
-      <div className='Subtitle-Dashboard'>Sell what you don’t need, get what you want!</div>
-      <div className='posts-container'>
-      {posts.map(post => 
-      (<div key={post.id} onClick={() => {
-        navigate(`/post/${post.id}`)
-      }} className='post-box'>{post.title}
-      <h2>{post.content}</h2>
-      <div>Author<h3>{post.author.email}</h3></div>
-      <h1>{post.timestamps}</h1>
-      <h2>{post.file}</h2>
-      <h2>{post.imageUrl}</h2>
-      <img className='bin' onClick={(e) => {
-        e.stopPropagation();
-        handleDeletePost(post._id)}} src='/bin.png' />
-      </div>))}
-      </div>
-      </div>
-      <div>
-        <img className='icon-post' onClick={() => {
+      <div className='create-post' 
+      onClick={() => {
             if(!token){
             alert('You need to login to post!');
             navigate('/');
             return;}
             if(!active === "icon-post"){setActive("icon-post")}
-            navigate('/CreatePost')}} src='/mores.png'></img>
-            <img className='icon-logout' onClick={() => {handleLogout()}} src='/logout.png'></img>   
+            navigate('/CreatePost')}} 
+      >+ Create Post</div>
+      </div>
+      <div className='Subtitle-Dashboard'>Sell what you don’t need, get what you want!</div>
+      <div className='posts-container'>
+      {posts.map(post => 
+      (<div key={post.id} onClick={() => {
+        navigate(`/post/${post.id}`)
+      }} className='post-box'><div className='holder-title-post'>{post.title}
+        </div>
+      <div className='holder-content-post'>{post.content}</div>
+      <div className='bottomHolder-post'>
+      <div className='holder-author-post'>
+        <div>{post.author.email}</div>
+      </div>
+      <h1>{post.timestamps}</h1>
+      <h2>{post.file}</h2>
+      <h2>{post.imageUrl}</h2>
+      <img className='heart' src='heart.png' onClick={(e) => {
+        e.stopPropagation();
+        
+      }} />
+      <img className='bin' onClick={(e) => {
+        e.stopPropagation();
+        handleDeletePost(post._id)}} src='/bin.png' />
+      </div>
+      </div>))}
+      </div>
       </div>
       </div>
     </div>
