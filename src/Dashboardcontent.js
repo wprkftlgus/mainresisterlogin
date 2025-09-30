@@ -51,6 +51,7 @@ function Dashboardcontent(){
             const res = await fetch('http://localhost:5000/api/posts');
             const data = await res.json();
             setPosts(data);
+            console.log(data);
             }
             catch(err){
                 console.error('Error happened...');
@@ -97,9 +98,9 @@ function Dashboardcontent(){
       </div>
       <div className='Subtitle-Dashboard'>Sell what you don’t need, get what you want!</div>
       <div className='posts-container'>
-      {posts.map(post => 
-      (<div key={post.id} onClick={() => {
-        navigate(`/post/${post.id}`)
+      {posts.map(post => (post ? (
+        <div key={post._id} onClick={() => {
+        navigate(`/post/${post._id}`)
       }} className='post-box'><div className='holder-title-post'>{post.title}
         </div>
       <div className='holder-content-post'>{post.content}</div>
@@ -110,6 +111,7 @@ function Dashboardcontent(){
       <h1>{post.timestamps}</h1>
       <h2>{post.file}</h2>
       <h2>{post.imageUrl}</h2>
+      <div className='date'>{new Date(post.updatedAt).toLocaleString()}</div>
       <img className='heart' src='heart.png' onClick={(e) => {
         e.stopPropagation();
         
@@ -118,7 +120,10 @@ function Dashboardcontent(){
         e.stopPropagation();
         handleDeletePost(post._id)}} src='/bin.png' />
       </div>
-      </div>))}
+      </div>
+      ) : 
+      (<div>loading...</div>))
+      )}
       </div>
       </div>
       </div>

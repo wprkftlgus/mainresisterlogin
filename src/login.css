@@ -1,50 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap');
 .holder {
     text-align: center;
     display: flex;
-    gap: 20px;
     height: 100vh;
-    background: url(C:\Users\-.-\Desktop\mainresisterlogin-master\mainresisterlogin-master\public\background.jfif);
+    background-color: rgb(75, 75, 75);
+    padding-top: 0;
+    font-family: "Merriweather", serif;
 }
 .image-left {
     background: url(C:\Users\-.-\Desktop\mainresisterlogin-master\mainresisterlogin-master\public\secondhand.jpg);
     background-repeat: no-repeat;
-    width: 70%;
-    color: rgb(230, 188, 188);
-    align-items: center;
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
 }
 .box-login {
-    background-color: white;
+    background-color: #000;
     width: 50%;
     box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+}
+
+.holder-login {
+    background-color: rgb(155, 155, 155);
+    padding: 10px;
+    margin: 60px;
+    margin-top: 250px;
+    border-radius: 20px;
 }
 .title {
     font-size: 35px;
     font-weight: 500;
+    
 }
-.title-left {
-font-size: 25px;
+.title-left1 {
+    font-size: 100px;
+    text-align: left;
+    padding-left: 3%;
+    margin-top: 20px;
+    opacity: 0;
+    animation: fadeIn 3s forwards;
+}
+.title-left2 {
+    font-size: 100px;
+    text-align: left;
+    padding-left: 3%;
+    opacity: 0;
+    animation: fadeIn 3s 0.6s forwards;
 }
 .subtitle-left {
-font-size: 20px;
+    font-size: 24px;
+    text-align: left;
+    padding-left: 3%;
+    width: 50%;
+    margin-top: 380px;
+    opacity: 0;
+    animation: fadeIn 3.5s 1s forwards;
 }
 .font-login {
     font-size: 35px;
     font-weight: 400;
     margin-bottom: 0;
+    outline: none;
 }
 .input-email {
     font-size: 28px;
     margin: 10px ;
     margin-top: 70px;
     border: 0;
-}
-.input-email:hover {
-    border: 2px solid;
-    
+    outline: none;
+    font-family: "Merriweather", serif;
+    padding-left: 10px;
 }
 .input-password {
     font-size: 28px;
     margin-bottom: 50px; 
+    font-family: "Merriweather", serif;
+    padding-left: 10px;
 }
 .input-password:hover {
     
@@ -75,4 +106,12 @@ font-size: 20px;
 .button-register:hover {
    background-color: rgb(242, 229, 255);
     cursor: pointer;
+}
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }

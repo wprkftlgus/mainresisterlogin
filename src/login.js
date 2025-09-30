@@ -37,12 +37,14 @@ function Login() {
   }
 
   return (
-    <div className='holder' style={{ padding: 20 }}>
+    <div className='holder'>
      <div className='image-left'>
-      <h2 className='title-left'>Get start your chat with other people!</h2>
+      <div className='title-left1'>Loop</div>
+      <div className='title-left2'>Market</div>
       <div className='subtitle-left'>Access your account to buy and sell with confidence, browse thousands of listings, and make secure transactions in our trusted second-hand marketplace.</div>
      </div>
      <div className='box-login'>
+      <div className='holder-login'>
       <div className='title'></div>
       <h2 className='font-login'>Welcome Back!</h2>
       <div className='font2-login'>Please login to your account</div>
@@ -51,6 +53,7 @@ function Login() {
       <button className='button-login' onClick={handleLogin}>LOGIN</button>
       <button className='button-register' onClick={() => {navigate('/register')}}>REGISTER</button>
       <p>{message}</p>
+     </div>
      </div>
     </div>
   );

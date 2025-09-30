@@ -17,6 +17,9 @@ app.use('/api', userRoutes);
 const postRoutes = require('./routes/post.js')
 app.use('/api/posts', postRoutes);
 
+const commentRoutes = require('./routes/comment.js');
+app.use('/api/comment', commentRoutes);
+
 mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log('✅ MongoDB Connected'))
   .catch(err => console.error(err));

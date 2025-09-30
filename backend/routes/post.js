@@ -21,7 +21,7 @@ router.post('/create', authMiddleware,  upload.single('file'), async (req, res) 
 
 router.get('/postDetail/:id', async (req,res) => {
     try {
-        const post = await Post.findById(req.params.id).populate();
+        const post = await Post.findById(req.params.id).populate('author');
         if(!post){ return res.status(404).json({ message: "Post not found" });}
         res.json(post);
     } catch(err){
@@ -37,6 +37,7 @@ router.get('/', async (req, res) => {
          res.status(500).json({ error: 'Failed to fetch posts' });
     }
 });
+
 
 router.delete('/delete' ,authMiddleware, async (req, res) => {
     try{
