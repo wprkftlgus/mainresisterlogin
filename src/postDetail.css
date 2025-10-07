@@ -1,7 +1,49 @@
+
+.bug-postdetail {
+  margin: 0 auto;
+  margin-top: 30vh;
+  background-image: url('../public/bug.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 150px;
+  height: 150px;
+  animation: bugSpin 1.0s infinite;
+}
+.loading-postdetail {
+    font-size: 50px;
+    font-weight: 500;
+    text-align: center;
+}
+.back-postdetail {
+    background-image: url('../public/left-arrow.png');
+    width: 60px;
+    height: 60px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor: pointer;
+    transition: 0.1s;
+}
+.back-postdetail:hover {
+    filter: invert(0.5);
+}
+.holder-titleAndContent-postdetail {
+    background-color: rgb(237, 239, 239);
+}
+.title-postdetail {
+    font-size: 50px;
+}
+.content-postdetail {
+    font-size: 30px;
+}
 .title-comments {
     font-size: 40px;
+    margin-left: 40px;
+}
+.holder-textareaAndButton {
+    text-align: center;
 }
 .textarea-comment {
+    
     width: 800px;
     font-size: 20px;
     height: 100px;
@@ -10,9 +52,17 @@
     outline: none;
     padding: 10px;
 }
+.textarea-comment:focus {
+    border: 2px solid black;
+}
 .container-comments {
     margin: 0 auto;
     max-width: 80vw;
+}
+.noComments {
+    font-size: 60px;
+    font-weight: 500;
+    text-align: center;
 }
 .holder-comment {
     display: flex;
@@ -47,4 +97,27 @@
 }
 .content-comment {
 
+}
+.bin-comment {
+    background-image: url('../public/bin.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+.bin-comment:hover {
+    filter: invert(23%) sepia(94%) saturate(7482%) hue-rotate(357deg) brightness(97%) contrast(122%);
+}
+@keyframes bugSpin {
+    0% {
+        transform: rotate(0deg) scale(1);
+    }
+    50% {
+        
+        transform: rotate(360deg) scale(1.4);
+    }
+    100% {
+        transform: rotate(720deg) scale(1);
+    }
 }

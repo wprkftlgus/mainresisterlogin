@@ -1,8 +1,10 @@
 import React, { useEffect , useState } from "react";
 import { useParams } from "react-router-dom";
 import "../src/postDetail.css";
+import { useNavigate } from "react-router-dom";
 
 function PostDetail(){
+    const navigate = useNavigate();
     const { id } = useParams();
     const [post, setPost] = useState(null);
     const [content, setContent] = useState();
@@ -84,35 +86,46 @@ function PostDetail(){
     }
 
     if (!post){
-        return <div>loading...</div>;
+        return (
+        <div className="bugAndLoading-postdetail">
+        <div className="bug-postdetail"></div>
+        <div className="loading-postdetail">Loading...</div>
+        </div>)
     }
     
     return(
         <div>
-        <div>{post.title}</div>
-        <div>{post.content}</div>
+        <div className="back-postdetail" onClick={() =>{
+            navigate(-1);
+        }}></div>
+        <div className="holder-titleAndContent-postdetail">
+        <div className="title-postdetail">{post.title}</div>
+        <div className="content-postdetail">{post.content}</div>
+        </div>
         <div className="title-comments">Comments</div>
         <div>
-        <textarea className="textarea-comment" placeholder="Add Comment..." value={content} onChange={(e) => setContent(e.target.value)} />
+        <div className="holder-textareaAndButton"><textarea className="textarea-comment" placeholder="Add Comment..." value={content} onChange={(e) => setContent(e.target.value)} />
         <button onClick={() => {
             postComment();
             window.location.reload();
-        }}>post comment</button>
+        }}>post comment</button></div>
         <div className="container-comments">
-        {comments.map((r, idx) => (
+        {comments== "" ? (<div className="noComments">No Comments Yet!</div>) : (
+            comments.map((r, idx) => (
             <div className="holder-comment" key={idx}>
             <div className="profile-comment"></div>
             <div className="holder-emailAndContent-comment">
             <div className="email-comment">{r.author.email}</div> 
             <div className="content-comment">{r.content}</div>
             </div>
-            <button onClick={() => {
+            <div className="bin-comment" onClick={() => {
                 deleteComment(r._id);
-                
                 window.location.reload();
-            }}>Delete</button>
+            }}></div>
             </div>
-        ))}
+        ))
+        )}
+        
         </div>
         </div>
         </div>

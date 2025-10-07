@@ -22,7 +22,7 @@ router.get('/fetchcomments/:postId', async (req,res) => {
     try {
         const comments = await Comment.find({ post: req.params.postId}).populate('author');
         if(!comments){
-            return res.status(400).json({ error: 'comment is not set'});
+            return res.status(400).json({ error: 'comments is not set'});
         }
         await res.json(comments);
     } catch (err) {
