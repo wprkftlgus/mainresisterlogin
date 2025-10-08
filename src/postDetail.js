@@ -79,7 +79,13 @@ function PostDetail(){
             }
         });
         const result = await res.json();
-        alert(result.message);
+        
+        if(res.ok){
+           alert(result.message);
+           window.location.reload();
+        } else {
+            alert(result.error);
+        }
         } catch(err){
             alert(err.error);
         };
@@ -105,8 +111,8 @@ function PostDetail(){
         <div className="title-comments">Comments</div>
         <div>
         <div className="holder-textareaAndButton"><textarea className="textarea-comment" placeholder="Add Comment..." value={content} onChange={(e) => setContent(e.target.value)} />
-        <button onClick={() => {
-            postComment();
+        <button onClick={async () => {
+            await postComment();
             window.location.reload();
         }}>post comment</button></div>
         <div className="container-comments">
@@ -118,9 +124,9 @@ function PostDetail(){
             <div className="email-comment">{r.author.email}</div> 
             <div className="content-comment">{r.content}</div>
             </div>
-            <div className="bin-comment" onClick={() => {
-                deleteComment(r._id);
-                window.location.reload();
+            <div className="bin-comment" onClick={async () => {
+                await deleteComment(r._id);
+                
             }}></div>
             </div>
         ))

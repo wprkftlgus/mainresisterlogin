@@ -11,7 +11,7 @@ router.post('/create', authMiddleware, async (req,res) => {
         const newComment = new Comment({
         content, author: req.user.id, post: postId })
         await newComment.save();
-        res.json({message : 'Susees!'})
+        res.json({message : 'Comment posted successfully!'})
     } catch(err){
         console.error(err);
         res.status(500).json({ error : 'Failed to upload comment!'})
@@ -30,18 +30,19 @@ router.get('/fetchcomments/:postId', async (req,res) => {
     }
 })
 
-router.delete('/delete/:commentId', authMiddleware, async (req,res) => {
+router.delete('/delete/:commentId', authMiddleware , async (req,res) => {
     try{
         const commentId = req.params.commentId;
+        const willDelete = await Comment.findById(commentId);
 
-        if(!deleted){
+        if(!willDelete){
             return res.status(404).json({ error: 'Comment not found'});
         }
-        if(req.user.email !== commentId.author.email){
+        if(req.user.id !== willDelete.author.toString()){
             return res.status(403).json({ error: "You can't delete other's comment!"});
         }
-        const deleted = await Comment.findByIdAndDelete(commentId);
-        res.json({ message: 'Comment Deleted Succesfully!'});
+        await Comment.findByIdAndDelete(commentId);
+        return res.json({ message: 'Comment Deleted Succesfully!'});
     } catch(err) {
         res.status(500).json({ error: 'Failed to delete'});
     }
