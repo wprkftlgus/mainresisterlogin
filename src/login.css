@@ -8,7 +8,7 @@
     font-family: "Merriweather", serif;
 }
 .image-left {
-    background: url(C:\Users\-.-\Desktop\mainresisterlogin-master\mainresisterlogin-master\public\secondhand.jpg);
+    background: url('../public/secondhand.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
