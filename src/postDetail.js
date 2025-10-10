@@ -69,7 +69,7 @@ function PostDetail(){
         }
         
     }; fetchComments();  
-    },[id])
+    },[comments])
     
     const deleteComment = async(commentId) => {
         try{
@@ -84,7 +84,7 @@ function PostDetail(){
         
         if(res.ok){
            alert(result.message);
-           window.location.reload();
+           
         } else {
             alert(result.error);
         }
