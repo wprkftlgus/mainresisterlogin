@@ -9,7 +9,7 @@
     display: flex;
     flex-direction: column;
     width: 200px;
-    background-color: rgb(237, 239, 239);
+    background-color: #dfe6e9;
     color: black;
     margin-top: 5px;
     margin-left: 15px;
@@ -28,14 +28,15 @@
     font-size: 20px;
 }
 .category-leftsection {
-    color: rgb(105, 105, 105);
+    color: rgb(39, 39, 39);
     padding-top: 40px;
     padding-left: 20px;
 }
 .button-left-section-true {
     cursor: pointer;
     display: flex;
-    margin: 0 20px 0 20px;
+    padding: 0 20px 0 20px;
+    border-radius: 20px;
     align-items: center;
     justify-content: center;
     background-color: rgb(185, 248, 200);
@@ -60,12 +61,13 @@
 .button-left-section-false {
     cursor: pointer;
     display: flex;
-    margin: 0 20px 0 20px;
+    padding: 0 20px 0 20px;
     align-items: center;
     justify-content: center;
 }
 .button-left-section-false:hover {
     background-color: rgb(185, 248, 200);
+    border-radius: 20px;
 }
 .icon-name {
     display: inline-block;
@@ -79,7 +81,7 @@
 }
 .holder-top {
     border-radius: 20px;
-    background-color: rgb(237, 239, 239);
+    background-color: #dfe6e9;
     display: flex;
     align-items: center;
     margin-bottom: 10px;
@@ -112,7 +114,7 @@
     background-color: rgb(255, 255, 255);
 }
 .container-dashboard {
-    background-color: rgb(237, 239, 239);
+    background-color: #dfe6e9;
     border-radius: 20px;
 }
 .holder-dashboard {
