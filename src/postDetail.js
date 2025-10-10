@@ -115,7 +115,7 @@ function PostDetail(){
         <div className="holder-textareaAndButton"><textarea className="textarea-comment" placeholder="Add Comment..." value={content} onChange={(e) => setContent(e.target.value)} />
         <button onClick={async () => {
             await postComment();
-            window.location.reload();
+            
         }}>post comment</button></div>
         <div className="container-comments">
         {comments== "" ? (<div className="noComments">No Comments Yet!</div>) : (
