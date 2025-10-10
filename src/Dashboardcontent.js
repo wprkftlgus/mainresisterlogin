@@ -8,6 +8,7 @@ function Dashboardcontent(){
     const [favorite, setFavorite] = useState();
     const navigate = useNavigate();
     const token = localStorage.getItem('token');
+    const API_URL = process.env.REACT_APP_API_URL;
 
     const handleLogout = () => {
         localStorage.removeItem('token');
@@ -21,7 +22,7 @@ function Dashboardcontent(){
             return;
         }
         try{
-            const res = await fetch('http://localhost:5000/api/posts/delete', {
+            const res = await fetch(`${API_URL}/api/posts/delete`, {
                 method: 'DELETE',
                 headers: {
                     'Content-Type' : 'application/json',
@@ -48,7 +49,7 @@ function Dashboardcontent(){
     useEffect(() => {
         const fetchPosts = async() => {
             try {
-            const res = await fetch('http://localhost:5000/api/posts');
+            const res = await fetch(`${API_URL}/api/posts`);
             const data = await res.json();
             setPosts(data);
             console.log(data);
