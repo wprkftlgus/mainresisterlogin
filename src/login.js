@@ -3,13 +3,14 @@ import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-route
 import './login.css';
 
 function Login() {
+  const API_URL = process.env.REACT_APP_API_URL;
   const [logEmail, setLogEmail] = useState('');
   const [logPassword, setLogPassword] = useState('');
   const [message, setMessage] = useState('');
   const navigate = useNavigate();
   const handleLogin = async () => {
     try {
-      const res = await fetch('http://localhost:5000/api/login', {
+      const res = await fetch(`${API_URL}/api/login`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email: logEmail, password: logPassword })

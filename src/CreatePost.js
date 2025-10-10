@@ -1,6 +1,7 @@
 import React, { useState }from 'react';
 import { useNavigate } from 'react-router-dom';
 import './createPost.css';
+const API_URL = process.env.REACT_APP_API_URL;
 
 function CreatePost(){
     const [title, setTitle] = useState();
@@ -24,7 +25,7 @@ function CreatePost(){
         formData.append('content', content);
         formData.append('file', file);
 
-        const res = await fetch('http://localhost:5000/api/posts/create', {
+        const res = await fetch(`${API_URL}/api/posts/create`, {
             method: 'POST' ,
             headers: { 'Authorization': `Bearer ${token}`},
             body: formData

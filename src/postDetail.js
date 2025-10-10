@@ -11,11 +11,13 @@ function PostDetail(){
     const [comment, setComment] = useState([]);
     const [comments, setComments] = useState([]);
 
+    const API_URL = process.env.REACT_APP_API_URL;
+
     const token = localStorage.getItem('token');
     
     useEffect(() => {
         const fetchPosts = async() => {
-            const res = await fetch(`http://localhost:5000/api/posts/postDetail/${id}`, {
+            const res = await fetch(`${API_URL}/api/posts/postDetail/${id}`, {
             method : 'GET' ,
             headers : { 'Content-Type': 'application/json' }
             });
@@ -32,7 +34,7 @@ function PostDetail(){
 
     const postComment = async () => {
             try{
-                const res = await fetch('http://localhost:5000/api/comment/create',{
+                const res = await fetch(`${API_URL}/api/comment/create`,{
                     method : 'POST',
                     headers: { 
                         'Authorization': `Bearer ${token}` ,
@@ -56,7 +58,7 @@ function PostDetail(){
     useEffect(() => {
         const fetchComments = async () => {
         try {
-            const res = await fetch(`http://localhost:5000/api/comment/fetchcomments/${id}`,{
+            const res = await fetch(`${API_URL}/api/comment/fetchcomments/${id}`,{
                 method: 'GET',
                 headers: { 'Content-Type': 'application/json'}
             });
@@ -71,7 +73,7 @@ function PostDetail(){
     
     const deleteComment = async(commentId) => {
         try{
-        const res = await fetch(`http://localhost:5000/api/comment/delete/${commentId}`,{
+        const res = await fetch(`${API_URL}/api/comment/delete/${commentId}`,{
             method: "DELETE",
             headers: {
                 "Authorization" : `Bearer ${token}`,

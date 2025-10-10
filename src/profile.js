@@ -7,8 +7,10 @@ function Profile(){
     const userEmail = localStorage.getItem('email');
     const token = localStorage.getItem('token');
 
+    const API_URL = process.env.REACT_APP_API_URL;
+
     const handleDeleteAllPost = async () => {
-        const res = await fetch('http://localhost:5000/api/posts/deleteAllPost' , {
+        const res = await fetch(`${API_URL}/api/posts/deleteAllPost` , {
             method: 'DELETE',
             headers: {'Authorization': `Bearer ${token}` },
             body: JSON.stringify({userEmail})
