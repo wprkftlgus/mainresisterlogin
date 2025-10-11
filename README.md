@@ -56,9 +56,9 @@ Each comment stores an author ID, and only the comment author can delete it.
 
 Authorization follows the same logic as posts.
 
-#📂 How to Run Locally
+# 📂 How to Run Locally
 
-**1. Clone the repository**
+**1. Clone the repository**<br>
 git clone <repo-url>
 
 **2. Navigate to backend folder and install dependencies**
