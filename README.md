@@ -1,70 +1,29 @@
-# Getting Started with Create React App
+# How to go on live website?
+1. Enter this website to turn the back-end server on: https://mainresisterlogin.onrender.com
+2. This is my website people can upload the post, please go this website and make a new account to access to the dashboard: https://mainresgisterlogin.netlify.app/
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# How does it work?
+Let's look at the big forest first
+# Back-end 
+Mongoose (MongoDB ODM), JWT Middleware (authMiddleware), Render, Express.js, REST API, async/await + try/catch
+# Front-end
+HTML, CSS, JAVA, REACT, React Hooks, Routes
 
-## Available Scripts
+# 🧩 Project Description 
 
-In the project directory, you can run:
+This project implements a full-stack MERN (MongoDB, Express, React, Node.js) application with user authentication and CRUD functionality.
 
-### `npm start`
+When a new user registers through the register page, the email and password are sent to the backend using the POST method following the Mongoose schema structure.
+If the email already exists in the database, the backend returns an error message.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+After registration, users can log in using their credentials.
+If the password is incorrect, an error message appears; if correct, the page navigates to the dashboard using React Router’s useNavigate function.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Once logged in, the useEffect hook automatically fetches and displays all posts stored in MongoDB.
+Each post has a unique ID, and users can delete a post only if the post author matches the currently logged-in user.
 
-### `npm test`
+When attempting to submit an empty post, the system validates input fields and returns a message such as “Please enter a title” or “Please enter content.”
+Users can also view the details of each post by passing a unique parameter (post ID) to the backend, which returns the full post information.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Additionally, users can write comments under posts.
+Each comment is stored with an author ID, and only the user who created a comment can delete it — following the same authorization logic used for posts.
