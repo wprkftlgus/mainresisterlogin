@@ -58,7 +58,7 @@ Authorization follows the same logic as posts.
 
 # 📂 How to Run Locally
 
-**1. Clone the repository**<br>
+**1. Clone the repository**
 git clone <repo-url>
 
 **2. Navigate to backend folder and install dependencies**
