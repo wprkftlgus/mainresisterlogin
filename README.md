@@ -9,21 +9,21 @@
 
 ## Back-end 
 <li>
-### Technologies: Node.js, Express.js, MongoDB (Mongoose ODM), JWT Authentication
+Technologies: Node.js, Express.js, MongoDB (Mongoose ODM), JWT Authentication
 </li>
 <li>
-**Deployment**: Render
+Deployment: Render
 </li>
 <li>  
-**Features**: REST API, async/await with try/catch, user authentication & authorization
+Features: REST API, async/await with try/catch, user authentication & authorization
 </li>
 
 ## Front-end
 <li>
-** Technologies **: React.js, React Hooks (useState, useEffect, useNavigate), React Router, HTML, CSS, JavaScript
+Technologies : React.js, React Hooks (useState, useEffect, useNavigate), React Router, HTML, CSS, JavaScript
 </li>
 <li>
-** Features **: Dynamic routing, state management, conditional rendering
+Features : Dynamic routing, state management, conditional rendering
 </li>
   
 # 🧩 Project Description 
