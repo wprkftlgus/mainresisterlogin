@@ -71,7 +71,7 @@ npm install <br>
 npm start
 
 **4. Open your browser at http://localhost:3000 and start testing.**
-## 💡 Tip: !!Make sure your **.env.development** files for backend and frontend are correctly configured with API URLs and secrets!!. <br><br>
+### 💡 Tip: !!Make sure your **.env.development** files for backend and frontend are correctly configured with API URLs and secrets!!. <br><br>
 For example...<br>
 **.env.development** <br>
 REACT_APP_API_URL=https://mainresisterlogin.onrender.com<br>
