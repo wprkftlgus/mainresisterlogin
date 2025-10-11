@@ -71,11 +71,12 @@ npm install <br>
 npm start
 
 **4. Open your browser at http://localhost:3000 and start testing.**
-## 💡 Tip: !!Make sure your **.env.development** files for backend and frontend are correctly configured with API URLs and secrets!!.
-For example...
-**.env.development** 
-REACT_APP_API_URL=https://mainresisterlogin.onrender.com
-MONGO_URI=mongodb+srv://(Your MongoDB ID):(Your MongoDB Password)@loginresister.6q5h7ri.mongodb.net/LoginResister?retryWrites=true&w=majority   **Make sure that when your password contains special characters, you use URL encoding. For example, ** becomes %2A%2A.**
+## 💡 Tip: !!Make sure your **.env.development** files for backend and frontend are correctly configured with API URLs and secrets!!. <br><br>
+For example...<br>
+**.env.development** <br>
+REACT_APP_API_URL=https://mainresisterlogin.onrender.com<br>
+MONGO_URI=mongodb+srv://(Your MongoDB ID):(Your MongoDB Password)@loginresister.6q5h7ri.mongodb.net/LoginResister?retryWrites=true&w=majority <br>  
+**Make sure that when your password contains special characters, you use URL encoding. For example, ** becomes %2A%2A.** <br>
 JWT_SECRET=26r9$gWq!5xHqT2@fR4vM5yK
 
 
