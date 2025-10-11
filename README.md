@@ -55,3 +55,28 @@ Users can write comments under posts.
 Each comment stores an author ID, and only the comment author can delete it.
 
 Authorization follows the same logic as posts.
+
+#📂 How to Run Locally
+
+**1. Clone the repository**
+git clone <repo-url>
+
+**2. Navigate to backend folder and install dependencies**
+cd backend
+npm install
+npm run dev
+
+**3. Navigate to frontend folder and install dependencies**
+cd frontend
+npm install
+npm start
+
+**4. Open your browser at http://localhost:3000 and start testing.**
+
+💡 Tip: Make sure your **.env.development** files for backend and frontend are correctly configured with API URLs and secrets.
+
+
+
+
+
+
