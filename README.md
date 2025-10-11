@@ -74,7 +74,7 @@ npm start
 ### 💡 Tip: !!Make sure your **.env.development** files for backend and frontend are correctly configured with API URLs and secrets!!. <br><br>
 For example...<br>
 **.env.development** <br>
-REACT_APP_API_URL=https://mainresisterlogin.onrender.com<br>
+REACT_APP_API_URL=http://localhost:3000<br>
 MONGO_URI=mongodb+srv://(Your MongoDB ID):(Your MongoDB Password)@loginresister.6q5h7ri.mongodb.net/LoginResister?retryWrites=true&w=majority <br>  
 **Make sure that when your password contains special characters, you use URL encoding. For example, ** becomes %2A%2A.** <br>
 JWT_SECRET=26r9$gWq!5xHqT2@fR4vM5yK
