@@ -7,9 +7,9 @@
 2. Please create a new account to access the dashboard and try uploading posts: https://mainresgisterlogin.netlify.app/
 </li>
 
-# Back-end 
+## Back-end 
 <li>
-**Technologies**: Node.js, Express.js, MongoDB (Mongoose ODM), JWT Authentication
+### Technologies: Node.js, Express.js, MongoDB (Mongoose ODM), JWT Authentication
 </li>
 <li>
 **Deployment**: Render
@@ -18,7 +18,7 @@
 **Features**: REST API, async/await with try/catch, user authentication & authorization
 </li>
 
-# Front-end
+## Front-end
 <li>
 ** Technologies **: React.js, React Hooks (useState, useEffect, useNavigate), React Router, HTML, CSS, JavaScript
 </li>
