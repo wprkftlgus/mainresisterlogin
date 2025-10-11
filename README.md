@@ -8,20 +8,29 @@
 </li>
 
 # Back-end 
-Technologies: Node.js, Express.js, MongoDB (Mongoose ODM), JWT Authentication
-Deployment: Render
-Features: REST API, async/await with try/catch, user authentication & authorization
+<li>
+**Technologies**: Node.js, Express.js, MongoDB (Mongoose ODM), JWT Authentication
+</li>
+<li>
+**Deployment**: Render
+</li>
+<li>  
+**Features**: REST API, async/await with try/catch, user authentication & authorization
+</li>
 
 # Front-end
-Technologies: React.js, React Hooks (useState, useEffect, useNavigate), React Router, HTML, CSS, JavaScript
-
-Features: Dynamic routing, state management, conditional rendering
-
+<li>
+** Technologies **: React.js, React Hooks (useState, useEffect, useNavigate), React Router, HTML, CSS, JavaScript
+</li>
+<li>
+** Features **: Dynamic routing, state management, conditional rendering
+</li>
+  
 # 🧩 Project Description 
 
 This project is a full-stack MERN application with user authentication, CRUD functionality, and post/comment management.
 
-Registration & Login
+### Registration & Login
 
 Users can register with an email and password. The backend validates data using a Mongoose schema.
 
@@ -29,7 +38,7 @@ If the email already exists, an error message is returned.
 
 After registration, users can log in. Incorrect passwords return an error, while correct credentials navigate the user to the dashboard using useNavigate.
 
-Posts
+### Posts
 
 Upon login, all posts are fetched automatically using the useEffect hook.
 
@@ -39,7 +48,7 @@ Input validation prevents empty posts; users must provide a title and content.
 
 Users can view post details by passing a unique post ID to the backend.
 
-Comments
+### Comments
 
 Users can write comments under posts.
 
