@@ -62,8 +62,8 @@ Authorization follows the same logic as posts.
 git clone <repo-url>
 
 **2. Navigate to backend folder and install dependencies**
-cd backend
-npm install
+cd backend <br></br>
+npm install  <br>
 npm run dev
 
 **3. Navigate to frontend folder and install dependencies**
