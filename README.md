@@ -58,17 +58,19 @@ Authorization follows the same logic as posts.
 
 # 📂 How to Run Locally
 
-**1. Clone the repository**
+**1. Clone the repository** <br>
 git clone <repo-url>
 
 **2. Navigate to backend folder and install dependencies**
-cd backend <br></br>
+<br>
+cd backend <br>
 npm install  <br>
 npm run dev
 
 **3. Navigate to frontend folder and install dependencies**
-cd frontend
-npm install
+<br>
+cd frontend <br>
+npm install <br>
 npm start
 
 **4. Open your browser at http://localhost:3000 and start testing.**
