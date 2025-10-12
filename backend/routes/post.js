@@ -38,6 +38,17 @@ router.get('/', async (req, res) => {
     }
 });
 
+router.get('/search/:value', async (req,res) => {
+    try {
+        const value = req.params.value;
+        const postSearched = await Post.find({
+            title : {$regex: value, $options: 'i'}
+        });
+        res.json(postSearched);
+    } catch(err){
+        res.status(500).json({ error: "Failed to search"});
+    }
+})
 
 router.delete('/delete' ,authMiddleware, async (req, res) => {
     try{

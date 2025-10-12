@@ -65,6 +65,30 @@ function Dashboardcontent(){
         setValue(e.target.value);
     }
 
+    const fetchAllPosts = async () => {
+    try {
+      const res = await fetch(`${API_URL}/api/posts`);
+      const data = await res.json();
+      setPosts(data);
+    }catch (err) {
+    console.error("Error fetching all posts");
+    }};
+
+    const handleSearch = async (e) => {
+      if(e.key === "Enter"){
+        if(!value){
+          fetchAllPosts();
+          return;
+        }
+        try{
+        const res = await fetch(`${API_URL}/api/posts/search/${value}`);
+        const data = await res.json();
+        setPosts(data);
+      } catch(err){
+        alert(err.error);
+      }
+      }
+    }
     const [active, setActive] = useState();
     const email = localStorage.getItem('email');
 
@@ -74,7 +98,7 @@ function Dashboardcontent(){
       <div className='holder-top'>
       <div className='searchbox'>
         <img src='/search.png' className='img-search'></img>
-        <input onChange={(e) => setValue(e.target.value)} value={value} className='search' placeholder='Search'></input>
+        <input onKeyDown={handleSearch} onChange={(e) => setValue(e.target.value)} value={value} className='search' placeholder='Search'></input>
         {value && <button onClick={(e) => {setValue("")}}>x</button>}
       </div>
         <div onClick={() => {
@@ -99,7 +123,9 @@ function Dashboardcontent(){
       </div>
       <div className='Subtitle-Dashboard'>Sell what you don’t need, get what you want!</div>
       <div className='posts-container'>
-      {posts.map(post => (post ? (
+      {posts.length > 0 ? 
+      (<div className='posts-container'>
+        {posts.map(post => (post ? (
         <div key={post._id} onClick={() => {
         navigate(`/post/${post._id}`)
       }} className='post-box'><div className='holder-title-post'>{post.title}
@@ -125,6 +151,10 @@ function Dashboardcontent(){
       ) : 
       (<div>loading...</div>))
       )}
+      </div>)
+      :
+      (<div className='noResearch'>No search found ㅠ~ㅠ</div>)}  
+      
       </div>
       </div>
       </div>

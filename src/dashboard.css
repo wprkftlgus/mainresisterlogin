@@ -152,13 +152,14 @@
     animation: fadein-BottomToTop 1.5s ease 0.8s forwards;
 }
 .posts-container {
-    
+    padding-bottom: 30px;
     max-width: 98%;
     padding-top: 15px;
     display: flex;
     flex-wrap: wrap;
 }
 .post-box {
+    min-width: 36vw;
     padding: 18px;
     width: 43%;
     margin: 18px;
@@ -255,6 +256,11 @@
 .useremail {
     font-size: 25px;
     text-align: center;
+}
+.noResearch {
+    font-size: 50px;
+    margin: 0 auto;
+    padding: 30vh;    
 }
 @keyframes fadein-BottomToTop {
     0% { opacity: 0; transform: translateY(20px);}
