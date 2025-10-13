@@ -3,23 +3,29 @@
     text-align: center;
     display: flex;
     height: 100vh;
-    background-color: rgb(75, 75, 75);
     padding-top: 0;
     font-family: "Merriweather", serif;
+}
+.wavebackground {
+    z-index: 200;
+    position: absolute;
 }
 .image-left {
     background: url('../public/secondhand.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
+    width: 155vw;
+    z-index: 3;
+}
+.holder {
     width: 100vw;
 }
 .box-login {
     background-color: #bfae9d;
-    width: 50%;
+    width: 100%;
     box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
 }
-
 .holder-login {
     background: rgba(255, 255, 255, 0.5);
     box-shadow: 5px 2px 20px rgba(0,0,0, 0.2);
@@ -27,6 +33,7 @@
     margin: 60px;
     margin-top: 250px;
     border-radius: 30px;
+    animation: slide 1s forwards;
 }
 .title {
     font-size: 35px;
@@ -38,24 +45,20 @@
     text-align: left;
     padding-left: 3%;
     margin-top: 20px;
-    opacity: 0;
-    animation: fadeIn 3s forwards;
 }
 .title-left2 {
     font-size: 100px;
     text-align: left;
     padding-left: 3%;
-    opacity: 0;
-    animation: fadeIn 3s 0.6s forwards;
 }
 .subtitle-left {
-    font-size: 24px;
+    font-size: 26px;
     text-align: left;
     padding-left: 3%;
     width: 50%;
     margin-top: 380px;
     opacity: 0;
-    animation: fadeIn 3.5s 1s forwards;
+    animation: fadeIn 1s 0.5s forwards;
 }
 .font-login {
     font-size: 35px;
@@ -85,40 +88,61 @@
 .input-password:hover {
     
 }
+.bottom-holder-login {
+    
+}
 .button-login {
     font-size: 25px;
-    width: 180px;
+    width: 350px;
     height: 50px;
     border: 1px solid rgb(239, 198, 236);
     background-color: rgb(247, 244, 250);
     margin-right: 8px;
     box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
     transition: 250ms ease;
-    border-radius: 10px;
+    border-radius: 15px;
+}
+.bottom-holder-login-title {
+    display: flex;
+    gap: 10px;
+    text-align: center;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 300px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+.bottom-login-title {
+    color: rgb(0, 0, 0, 0.6);
 }
 .button-register {
-    font-size: 25px;
-    width: 180px;
-    height: 50px;
-    border: 1px solid rgb(239, 198, 236);
-    background-color: rgb(247, 244, 250);
-    box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
-    transition: 250ms ease;
-    border-radius: 10px;
+    font-size: 16px;
+    display: inline-block;
+    font-weight: 600;
 }
 .button-login:hover {
     background-color: rgb(242, 229, 255);
     cursor: pointer;
 }
 .button-register:hover {
-   background-color: rgb(242, 229, 255);
     cursor: pointer;
+    text-decoration: underline;
 }
 @keyframes fadeIn {
     0% {
         opacity: 0;
     }
     100% {
+        opacity: 1;
+    }
+}
+@keyframes slide {
+    0% {
+        transform: translateX(40px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0px);
         opacity: 1;
     }
 }

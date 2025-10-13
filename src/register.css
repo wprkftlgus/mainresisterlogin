@@ -1,0 +1,73 @@
+.holder-register {
+    background: rgba(255, 255, 255, 0.5);
+    box-shadow: 5px 2px 20px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    margin: 60px;
+    margin-top: 250px;
+    border-radius: 30px;
+    animation: slide 1s forwards;
+}
+.title-register {
+    font-size: 35px;
+    font-weight: 400;
+    margin-bottom: 0;
+    outline: none;
+    font-weight: 500;
+    margin: 20px;
+}
+.input-email-register {
+    font-size: 28px;
+    margin: 10px;
+    margin-top: 50px;
+    border: 0;
+    outline: none;
+    font-family: "Merriweather", serif;
+    padding-left: 10px;
+    border-radius: 8px;
+}
+.input-password-register {
+    font-size: 28px;
+    margin-bottom: 50px;
+    font-family: "Merriweather", serif;
+    padding-left: 10px;
+    outline: none;
+    border: 0;
+    border-radius: 8px;
+}
+.button-register-register {
+    font-size: 25px;
+    width: 350px;
+    height: 50px;
+    border: 1px solid rgb(239, 198, 236);
+    background-color: rgb(247, 244, 250);
+    margin-right: 8px;
+    box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+    transition: 250ms ease;
+    border-radius: 15px;
+    margin-bottom: 30px;
+}
+.button-register-register:hover {
+    background-color: rgb(242, 229, 255);
+    cursor: pointer;
+}
+.bottom-holder-register-title {
+    display: flex;
+    gap: 10px;
+    text-align: center;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 193px;
+    margin-bottom: 20px;
+}
+.bottom-register-title {
+    color: rgb(0, 0, 0, 0.6);
+}
+.navigate-login {
+    font-size: 16px;
+    display: inline-block;
+    font-weight: 600;
+}
+.navigate-login:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}

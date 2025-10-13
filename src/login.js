@@ -1,6 +1,17 @@
 import React , { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
 import './login.css';
+import "./WaveBackground.css";
+
+function WaveBackground() {
+  return (
+    <>
+      <div className="wave"></div>
+      <div className="wave"></div>
+      <div className="wave"></div>
+    </>
+  );
+}
 
 function Login() {
   const API_URL = process.env.REACT_APP_API_URL;
@@ -39,12 +50,8 @@ function Login() {
 
   return (
     <div className='holder'>
-     <div className='image-left'>
-      <div className='title-left1'>Loop</div>
-      <div className='title-left2'>Market</div>
-      <div className='subtitle-left'>Access your account to buy and sell with confidence, browse thousands of listings, and make secure transactions in our trusted second-hand marketplace.</div>
-     </div>
      <div className='box-login'>
+      <WaveBackground className="wavebackground" />
       <div className='holder-login'>
       <div className='title'></div>
       <h2 className='font-login'>Welcome Back!</h2>
@@ -52,8 +59,12 @@ function Login() {
       <input className='input-email' type="email" placeholder="Email" value={logEmail} onChange={e => setLogEmail(e.target.value)} onKeyDown={handlekeydown} /><br />
       <input className='input-password' type="password" placeholder="Password" value={logPassword} onChange={e => setLogPassword(e.target.value)} onKeyDown={handlekeydown} /><br />
       <button className='button-login' onClick={handleLogin}>LOGIN</button>
-      <button className='button-register' onClick={() => {navigate('/register')}}>REGISTER</button>
-      <p>{message}</p>
+      <div className='bottom-holder-login'>
+      <div className='bottom-holder-login-title'>
+      <div className='bottom-login-title'>Don't have an account yet?</div>
+      <div className='button-register' onClick={() => {navigate('/register')}}>REGISTER</div>
+      </div>
+      </div>
      </div>
      </div>
     </div>
