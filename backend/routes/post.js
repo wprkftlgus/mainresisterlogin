@@ -1,23 +1,38 @@
 const express = require('express');
 const router = express.Router();
 const authMiddleware = require('../middleware/authMiddleware.js');
+const uploadMiddleware = require('../middleware/multerMiddleware');
 const Post = require('../models/Poost.js');
-const multer = require('multer');
-const upload = multer({dest: 'upload/'})
 const jwt = require('jsonwebtoken');
 const User = require('../models/User');
 
-router.post('/create', authMiddleware,  upload.single('file'), async (req, res) => {
-    try{
+
+router.post('/create', authMiddleware, uploadMiddleware, async (req, res) => {
+        try{
         const { title, content } = req.body;
         const author = req.user.id;
-        const newPost = new Post({ title, content, author});
+
+        let imageBase64 = null;
+        let imageType = null;
+
+        if(req.file){
+            imageBase64 = req.file.buffer.toString("base64");
+            imageType = req.file.mimetype;
+        }
+        const newPost = new Post({ title, content, author, 
+            image: imageBase64, imageType: req.file?.mimetype
+        });
         await newPost.save();
         res.json({ Message: 'Post created!'});
     } catch(err){
         res.status(500).json({ error: 'Failed to upload post'});
     }
-});
+    });
+
+router.use((err, req, res, next) => {
+    console.error(err);
+    res.status(400).json({ error: err.message});
+})
 
 router.get('/postDetail/:id', async (req,res) => {
     try {

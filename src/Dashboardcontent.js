@@ -136,8 +136,12 @@ function Dashboardcontent(){
         <div>{post.author.email}</div>
       </div>
       <h1>{post.timestamps}</h1>
-      <h2>{post.file}</h2>
-      <h2>{post.imageUrl}</h2>
+      <img
+     src={`data:${post.imageType};base64,${post.image}`}
+     alt="post"
+      />
+
+
       <div className='date'>{new Date(post.updatedAt).toLocaleString()}</div>
       <img className='heart' src='heart.png' onClick={(e) => {
         e.stopPropagation();
