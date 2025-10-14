@@ -29,9 +29,13 @@
     border: solid 1px transparent;
     
 }
-.box-input:hover {
-    border: solid 1px rgb(109, 107, 107);
-    
+
+.price-input {
+    border-radius: 20px;
+    border-style: none;
+    outline: none;
+    font-size: 20px;
+    padding: 10px;
 }
 .input-title {
     border-radius: 20px;

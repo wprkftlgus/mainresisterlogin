@@ -128,25 +128,20 @@ function Dashboardcontent(){
         {posts.map(post => (post ? (
         <div key={post._id} onClick={() => {
         navigate(`/post/${post._id}`)
-      }} className='post-box'><div className='holder-title-post'>{post.title}
-        </div>
+      }} className='post-box'>
+      <div className='holder-imgAndTitlePriceDate'>
+      <img className='img-post' src={`data:${post.imageType};base64,${post.image}`} />
+      <div className='holder-TitleAndPriceDate'>
+      <div className='holder-title-post'>{post.title}</div>
+      <div className='date'>{new Date(post.updatedAt).toLocaleString()}</div>
+      <div className='price-post'>{post.price}£</div>
+      </div>
+      </div>  
       <div className='holder-content-post'>{post.content}</div>
       <div className='bottomHolder-post'>
       <div className='holder-author-post'>
         <div>{post.author.email}</div>
       </div>
-      <h1>{post.timestamps}</h1>
-      <img
-     src={`data:${post.imageType};base64,${post.image}`}
-     alt="post"
-      />
-
-
-      <div className='date'>{new Date(post.updatedAt).toLocaleString()}</div>
-      <img className='heart' src='heart.png' onClick={(e) => {
-        e.stopPropagation();
-        
-      }} />
       <img className='bin' onClick={(e) => {
         e.stopPropagation();
         handleDeletePost(post._id)}} src='/bin.png' />

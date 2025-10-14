@@ -6,6 +6,7 @@ const API_URL = process.env.REACT_APP_API_URL;
 function CreatePost(){
     const [title, setTitle] = useState();
     const [content, setContent] = useState();
+    const [price, setPrice] = useState();
     const [file, setFile] = useState(null);
     const Navigate = useNavigate();
     
@@ -18,11 +19,15 @@ function CreatePost(){
             alert('You can not empty the content');
             return ;
         }
-
+        if(isNaN(price)){
+            alert('Please put price properly');
+            return ; 
+        }
         const token = localStorage.getItem('token');
         const formData = new FormData();
         formData.append('title', title);
         formData.append('content', content);
+        formData.append('price', price);
         formData.append('file', file);
 
         const res = await fetch(`${API_URL}/api/posts/create`, {
@@ -50,6 +55,7 @@ function CreatePost(){
             <div className='div-box-input'><div className='box-input'><input className='input-title' type='text' placeholder='Title' value={title} onChange={(e) => {setTitle(e.target.value)}} /></div></div>
             <div className='box-input'><textarea className='input-content' placeholder="Content" value={content} onChange={e => setContent(e.target.value)} /></div>
             <input type="file" onChange={e => setFile(e.target.files[0])} />
+            <input value={price} onChange={(e) => setPrice(e.target.value)} type='number' className='price-input' placeholder='Price (£)' />
             <div className='holder-buttom-icon'>
              <img className='icon-checked' src='/checked.png' onClick={handleSubmit} />
             </div>

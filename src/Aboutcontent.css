@@ -1,5 +1,9 @@
 .about-container {
-    background-color: #fafafa;
+    background-color: #dfe6e9;
+    width: 75vw;
+    margin: 0 auto;
+    border-radius: 40px;
+    padding: 45px;
 }
 .title-about {
     font-weight: 500;
@@ -7,6 +11,6 @@
     
 }
 .content-about {
-    font-size: 30px;
+    font-size: 25px;
     margin: 0 auto;
 }

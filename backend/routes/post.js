@@ -9,7 +9,7 @@ const User = require('../models/User');
 
 router.post('/create', authMiddleware, uploadMiddleware, async (req, res) => {
         try{
-        const { title, content } = req.body;
+        const { title, content, price } = req.body;
         const author = req.user.id;
 
         let imageBase64 = null;
@@ -19,7 +19,7 @@ router.post('/create', authMiddleware, uploadMiddleware, async (req, res) => {
             imageBase64 = req.file.buffer.toString("base64");
             imageType = req.file.mimetype;
         }
-        const newPost = new Post({ title, content, author, 
+        const newPost = new Post({ title, content, author, price, 
             image: imageBase64, imageType: req.file?.mimetype
         });
         await newPost.save();

@@ -173,10 +173,26 @@
     transform: scale(0.96);
     box-shadow: 0 2px 6px rgba(0,0,0,0.15);
 }
+.holder-imgAndTitlePriceDate {
+    display: flex;
+}
+.holder-TitleAndPriceDate {
+    padding-left: 20px;
+}
 .holder-title-post {
-    max-width: 200px;
-    font-size: 25px;
-    margin: 0 auto;
+    font-size: 40px;
+    font-weight: 500;
+    max-width: 300px;
+    max-height: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.date {
+    color: rgb(0, 0, 0, 0.6);
+}
+.price-post {
+    font-size: 40px;
+    font-weight: 500;
 }
 .holder-content-post{
     margin: 0 auto;
@@ -196,17 +212,12 @@
 .holder-author-post {
     
 }
+.img-post {
+    height: 300px;
+    width: 300px;
+}
 .date {
     width: 100%;
-}
-.heart {
-    width: 25px;
-    height: 25px;
-    
-    cursor: pointer;
-}
-.heart:hover {
-    filter: invert(23%) sepia(94%) saturate(7482%) hue-rotate(357deg) brightness(97%) contrast(122%);
 }
 .bin {
     cursor: pointer;
@@ -239,7 +250,7 @@
     align-items: center;
     border-radius: 20px;
     padding: 12px;
-    margin: 12px;
+    margin: 15px;
     margin-left: 550px;
     cursor: pointer;
     transition: 0.1s;
