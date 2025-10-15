@@ -170,7 +170,7 @@
     cursor: pointer;
 }
 .post-box:hover {
-    transform: scale(0.96);
+    transform: scale(1.02);
     box-shadow: 0 2px 6px rgba(0,0,0,0.15);
 }
 .holder-imgAndTitlePriceDate {
@@ -180,7 +180,7 @@
     padding-left: 20px;
 }
 .holder-title-post {
-    font-size: 40px;
+    font-size: 30px;
     font-weight: 500;
     max-width: 300px;
     max-height: 200px;
@@ -191,7 +191,7 @@
     color: rgb(0, 0, 0, 0.6);
 }
 .price-post {
-    font-size: 40px;
+    font-size: 30px;
     font-weight: 500;
 }
 .holder-content-post{
@@ -208,6 +208,8 @@
     align-items: center;
     border-top: 1px solid rgb(218, 218, 218);
     max-width: 90%;
+    gap: 90%;
+    padding-top: 20px;
 }
 .holder-author-post {
     
@@ -221,8 +223,8 @@
 }
 .bin {
     cursor: pointer;
-    width: 25px;
-    height: 25px;
+    width: 40px;
+    height: 40px;
 }
 .bin:hover {
     filter: invert(23%) sepia(94%) saturate(7482%) hue-rotate(357deg) brightness(97%) contrast(122%);

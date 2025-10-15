@@ -16,48 +16,117 @@
 }
 .back-postdetail {
     background-image: url('../public/left-arrow.png');
-    width: 60px;
-    height: 60px;
+    width: 80px;
+    height: 80px;
     background-repeat: no-repeat;
     background-size: cover;
     cursor: pointer;
     transition: 0.1s;
+    margin-left: 80px;
 }
 .back-postdetail:hover {
     filter: invert(0.5);
 }
-.holder-titleAndContent-postdetail {
+.holder-top-postdetail {
     background-color: rgb(237, 239, 239);
+    padding-top: 30px;
+}
+.holder-img-postdetail {
+    padding-top: 30px;
+    max-width: 40vw;
+    margin: 0 auto;
+}
+.img-postdetail {
+    width: 100%;
+}
+.holder-profileAuthorTitleAndContent {
+    margin: 0 auto;
+    max-width: 80vw;
+}
+.holder-profileAndAuthor {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.profile-postdetail {
+    background: url('../public/profile.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 60px;
+    height: 60px;
+}
+.author-postdetail {
+    font-size: 38px;
+    margin-bottom: 12px;
 }
 .title-postdetail {
-    font-size: 50px;
+    font-size: 40px;
+    font-weight: 500;
+    margin-bottom: 50px;
+    border-top: 1px solid rgb(155, 155, 155);
+    padding-top: 20px;
 }
 .content-postdetail {
-    font-size: 30px;
+    font-size: 25px;
 }
 .title-comments {
     font-size: 40px;
-    margin-left: 40px;
+    font-weight: 500;
+    margin-left: 2px;
+    padding-bottom: 20px;
+}
+.holder-bottom-postdetail {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    margin: 0 auto;
+    max-width: 80vw;
 }
 .holder-textareaAndButton {
     text-align: center;
 }
+.submit {
+    position:relative;
+    bottom: 20px;
+    left: 30vw;
+    background-color: #007bff; /* 기본 파란색 */
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+}
+.submit:hover {
+    background-color: #3399ff;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(0, 123, 255, 0.4);
+}
+.submit:active {
+    transform: translateY(0);
+    box-shadow: 0 3px 8px rgba(0, 123, 255, 0.3);
+}
 .textarea-comment {
-    
-    width: 800px;
+    border: 3px solid black;
+    width: 78vw;
     font-size: 20px;
     height: 100px;
     border-radius: 15px;
     resize: none;
     outline: none;
-    padding: 10px;
+    padding: 20px;
+    margin-bottom: 30px;
 }
 .textarea-comment:focus {
-    border: 2px solid black;
+    border: 3px solid rgb(8, 170, 199);
 }
 .container-comments {
     margin: 0 auto;
     max-width: 80vw;
+    margin-top: 50px;
 }
 .noComments {
     font-size: 60px;

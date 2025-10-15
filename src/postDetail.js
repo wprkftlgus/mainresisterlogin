@@ -103,17 +103,27 @@ function PostDetail(){
     
     return(
         <div>
+        <div className="holder-top-postdetail">
         <div className="back-postdetail" onClick={() =>{
             navigate(-1);
         }}></div>
-        <div className="holder-titleAndContent-postdetail">
+        <div className="holder-img-postdetail">
+        <img className='img-postdetail' src={`data:${post.imageType};base64,${post.image}`} />    
+        </div>
+        <div className="holder-profileAuthorTitleAndContent">
+        <div className="holder-profileAndAuthor">
+        <div className="profile-postdetail"></div>
+        <div className="author-postdetail">{post.author.email}</div>
+        </div>
         <div className="title-postdetail">{post.title}</div>
         <div className="content-postdetail">{post.content}</div>
         </div>
+        </div>
+        <div className="holder-bottom-postdetail">
         <div className="title-comments">Comments</div>
         <div>
         <div className="holder-textareaAndButton"><textarea className="textarea-comment" placeholder="Add Comment..." value={content} onChange={(e) => setContent(e.target.value)} />
-        <button onClick={async () => {
+        <button className="submit" onClick={async () => {
             await postComment();
             
         }}>post comment</button></div>
@@ -134,6 +144,7 @@ function PostDetail(){
         ))
         )}
         
+        </div>
         </div>
         </div>
         </div>
