@@ -17,7 +17,7 @@ function Dashboard(){
     }
     
     return(
-        <div className='whole'>
+      <div className='whole'>
       <div className='section-left'>
         <div className='container-bug'>
           <img className='bug' src='/bug.png' />

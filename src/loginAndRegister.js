@@ -7,7 +7,7 @@ import Login from './login';
 function LoginAndRegister() {
 
   return (
-    <div className='holder'>
+    <div className='whole-login'>
      <div className='image-left'>
       <div className='title-left1'>Loop</div>
       <div className='title-left2'>Market</div>

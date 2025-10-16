@@ -1,10 +1,35 @@
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap');
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+}
+.root {
+    width: 100vw;   
+  height: 100vh; 
+}
+.whole-login {
+  text-align: center;
+    display: flex;
+    height: 100vh;
+    padding-top: 0;
+    font-family: "Merriweather", serif;
+  min-width: 500px;
+  
+  align-items: center;
+  width: 100vw;   
+  height: 100vh;  
+}
 .holder {
     text-align: center;
     display: flex;
     height: 100vh;
     padding-top: 0;
     font-family: "Merriweather", serif;
+}
+.wave {
+    position: fixed;
 }
 .wavebackground {
     z-index: 200;
@@ -15,15 +40,15 @@
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
-    width: 155vw;
+    min-width: 900px;
     z-index: 3;
 }
 .holder {
-    width: 100vw;
+  
 }
 .box-login {
     background-color: #bfae9d;
-    width: 100%;
+    min-width: 700px;
     box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
 }
 .holder-login {
@@ -31,7 +56,7 @@
     box-shadow: 5px 2px 20px rgba(0,0,0, 0.2);
     padding: 10px;
     margin: 60px;
-    margin-top: 250px;
+    margin-top: 25%;
     border-radius: 30px;
     animation: slide 1s forwards;
 }
@@ -56,7 +81,7 @@
     text-align: left;
     padding-left: 3%;
     width: 50%;
-    margin-top: 380px;
+    margin-top: 20%;
     opacity: 0;
     animation: fadeIn 1s 0.5s forwards;
 }

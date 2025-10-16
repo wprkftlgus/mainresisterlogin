@@ -3,6 +3,8 @@
     margin-bottom: 10px;
     display: flex;
     margin-right: 7px;
+  min-width: 85vw;
+  height: 100vh;
 }
 .section-left {
     height: 50vh;
@@ -75,11 +77,11 @@
     padding-left: 10px;
 }
 .contentholder-Posts{
-    width: 100%;
-    
     border-radius: 25px;
+    min-width: 1600px;
 }
 .holder-top {
+    min-width: 80vw;
     border-radius: 20px;
     background-color: #dfe6e9;
     display: flex;
@@ -89,7 +91,7 @@
 .searchbox {
     height: 60px;
     border-radius: 20px;
-    width: 650px;
+    min-width: 650px;
     align-items: center;
     background-color: rgb(255, 255, 255);
     margin-left: 30px;
@@ -132,6 +134,8 @@
     animation: fadein-BottomToTop 1.5s ease 0.4s forwards;
 }
 .create-post {
+    min-width: 120px;
+    max-width: 120px;
     border: 1px solid transparent;
     cursor: pointer;
     font-size: 20px;
@@ -146,22 +150,26 @@
     border: 1px solid rgb(61, 61, 61);
 }
 .Subtitle-Dashboard {
+    min-width: 1200px;
+    max-width: 1200px;
     color: rgb(105, 105, 105);
     margin-left: 30px;
     opacity: 0;
     animation: fadein-BottomToTop 1.5s ease 0.8s forwards;
 }
 .posts-container {
+    padding-left: 30px;
     padding-bottom: 30px;
-    max-width: 98%;
+    max-width: 1600px;
+    min-width: 1600px;
     padding-top: 15px;
     display: flex;
     flex-wrap: wrap;
 }
 .post-box {
-    min-width: 36vw;
     padding: 18px;
-    width: 43%;
+    min-width: 600px;
+    max-width: 600px;
     margin: 18px;
     background-color: rgb(255, 255, 255);
     border-radius: 20px;
