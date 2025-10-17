@@ -1,7 +1,11 @@
 # 🖥 MERN Full-Stack Project: Posts & Comments Dashboard
 ### **🌐 Live Website**
-1. Enter this website to turn the back-end server on: https://mainresisterlogin.onrender.com
-2. Please create a new account to access the dashboard and try uploading posts: https://mainresgisterlogin.netlify.app/
+1. Enter this website to turn the back-end server on: <a href="https://mainresisterlogin.onrender.com" target="_blank" rel="noopener noreferrer">
+    https://mainresisterlogin.onrender.com
+  </a>
+2. Please create a new account to access the dashboard and try uploading posts:  <a href="https://mainresgisterlogin.netlify.app/" target="_blank" rel="noopener noreferrer">
+    https://mainresgisterlogin.netlify.app/
+  </a>
 
 ## Back-end 
 
