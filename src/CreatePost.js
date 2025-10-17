@@ -52,7 +52,7 @@ function CreatePost(){
         <div className='holder-createPost'>
             <img className='icon-back' onClick={() => {Navigate('/dashboard')}} src='/left-arrow.png'></img>
             <h2 className='title-createPost'>Create Post</h2>
-            <div className='div-box-input'><div className='box-input'><input className='input-title' type='text' placeholder='Title' value={title} onChange={(e) => {setTitle(e.target.value)}} /></div></div>
+            <div className='div-box-input'><input className='input-title' type='text' placeholder='Title' value={title} onChange={(e) => {setTitle(e.target.value)}} /></div>
             <div className='box-input'><textarea className='input-content' placeholder="Content" value={content} onChange={e => setContent(e.target.value)} /></div>
             <input type="file" onChange={e => setFile(e.target.files[0])} />
             <input value={price} onChange={(e) => setPrice(e.target.value)} type='number' className='price-input' placeholder='Price (£)' />

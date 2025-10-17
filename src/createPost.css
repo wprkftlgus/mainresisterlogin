@@ -17,6 +17,7 @@
 }
 .div-box-input {
     margin-bottom: 20px;
+    width: 80%;
 }
 .title-createPost {
     margin-left: 9px;
@@ -27,7 +28,7 @@
     display: inline-block;
     border-radius: 20px;
     border: solid 1px transparent;
-    
+    width: 80%;
 }
 
 .price-input {
@@ -35,21 +36,23 @@
     border-style: none;
     outline: none;
     font-size: 20px;
-    padding: 10px;
+    padding: 13px;
+    margin-bottom: 20px;
 }
 .input-title {
+    width: 100%;
     border-radius: 20px;
     border-style: none;
     outline: none;
     font-size: 20px;
-    padding: 10px;
+    padding: 13px;
 }
 .input-content {
     border-radius: 20px;
     border-style: none;
     outline: none;
     font-size: 20px;
-    padding: 10px;
+    padding: 13px;
     width: 100%;
     height: 40vh;
 }
@@ -64,4 +67,27 @@
 @keyframes fadein-buttomToTop {
     0% { transform: translateY(20px); opacity: 0;}
     100% { transform: translateY(0); opacity: 1;}
+}
+@media (max-width: 1075px){
+    .title-createPost {
+        font-size: 30px;
+    }
+    .input-title {
+        width: 50vw;
+    }
+    .input-content {
+        width: 50vw;
+    }
+    .price-input {
+        width: 50vw;
+    }
+    .icon-back {
+        width: 40px;
+    }
+    .icon-checked {
+        width: 50px;
+    }
+    .holder-buttom-icon {
+        padding-right: 0;
+    }
 }

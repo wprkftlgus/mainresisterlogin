@@ -30,9 +30,8 @@
     font-size: 20px;
 }
 .category-leftsection {
-    color: rgb(39, 39, 39);
-    padding-top: 40px;
-    padding-left: 20px;
+    color: rgb(0, 0, 0, 0.6);
+    padding: 40px 0 5px 20px;
 }
 .button-left-section-true {
     cursor: pointer;
@@ -47,6 +46,7 @@
     display: flex;
     align-items: center;
     cursor: pointer;
+    justify-content: center;
 }
 .holder-logout:hover {
     background-color: rgb(185, 248, 200);
@@ -172,7 +172,7 @@
     max-width: 600px;
     margin: 18px;
     background-color: rgb(255, 255, 255);
-    border-radius: 20px;
+    border-radius: 26px;
     animation: fadeScale 1.5s ease forwards;
     transition: 0.2s;
     cursor: pointer;
@@ -203,9 +203,12 @@
     font-weight: 500;
 }
 .holder-content-post{
+    font-size: 18px;
     margin: 0 auto;
-    padding-bottom: 50px;
+    padding-top: 20px;
+    padding-bottom: 30px;
     max-width: 550px;
+    max-height: 100px;
     display: block;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -225,6 +228,7 @@
 .img-post {
     height: 300px;
     width: 300px;
+    border-radius: 20px;
 }
 .date {
     width: 100%;
