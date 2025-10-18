@@ -1,5 +1,11 @@
 # 🖥 MERN Full-Stack Project: Posts & Comments Dashboard
-### **🌐 Live Website**
+<img width="693" height="830" alt="3" src="https://github.com/user-attachments/assets/ec3ba5f4-9ae3-4cda-9c2a-bc35e68a0680" />
+<img width="1113" height="830" alt="2" src="https://github.com/user-attachments/assets/52e70ba3-e271-4fbf-9123-353bcb08723f" />
+<img width="1920" height="946" alt="1" src="https://github.com/user-attachments/assets/9dad510e-0bad-414b-aa82-edc3d0dd6fd0" />
+
+
+
+# **🌐 Live Website**
 1. Enter this website to turn the back-end server on: https://mainresisterlogin.onrender.com
 2. Please create a new account to access the dashboard and try uploading posts:  https://mainresgisterlogin.netlify.app
 
