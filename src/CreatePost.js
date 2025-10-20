@@ -19,6 +19,10 @@ function CreatePost(){
             alert('You can not empty the content');
             return ;
         }
+        if(!file){
+            alert('You have to post at least 1 picture!');
+            return ;
+        }
         if(isNaN(price)){
             alert('Please put price properly');
             return ; 

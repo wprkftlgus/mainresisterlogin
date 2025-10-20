@@ -1,4 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 .holder-createPost {
+    font-family: "Roboto", sans-serif;
     background-color: rgb(237, 239, 239);
     height: 90%;
     width: 60%;

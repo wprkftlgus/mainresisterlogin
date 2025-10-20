@@ -52,7 +52,7 @@ function Dashboardcontent(){
             const res = await fetch(`${API_URL}/api/posts`);
             const data = await res.json();
             setPosts(data);
-            console.log(data);
+            
             }
             catch(err){
                 console.error('Error happened...');
@@ -139,8 +139,10 @@ function Dashboardcontent(){
       </div>  
       <div className='holder-content-post'>{post.content}</div>
       <div className='bottomHolder-post'>
+        
       <div className='holder-author-post'>
-        <div>{post.author.email}</div>
+        <div className='By'>By</div>
+        <div className='author-post'>{post.author.email}</div>
       </div>
       <img className='bin' onClick={(e) => {
         e.stopPropagation();

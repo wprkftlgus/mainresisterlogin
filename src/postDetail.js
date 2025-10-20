@@ -102,7 +102,7 @@ function PostDetail(){
     }
     
     return(
-        <div>
+        <div className="whole-postdetail">
         <div className="holder-top-postdetail">
         <div className="back-postdetail" onClick={() =>{
             navigate(-1);
@@ -115,6 +115,7 @@ function PostDetail(){
         <div className="profile-postdetail"></div>
         <div className="author-postdetail">{post.author.email}</div>
         </div>
+        <div className="price-postdetail">{post.price}£</div>
         <div className="title-postdetail">{post.title}</div>
         <div className="content-postdetail">{post.content}</div>
         </div>
@@ -132,6 +133,7 @@ function PostDetail(){
             comments.map((r, idx) => (
             <div className="holder-comment" key={idx}>
             <div className="profile-comment"></div>
+            <div className="holder-emailContentAndBin-comment">
             <div className="holder-emailAndContent-comment">
             <div className="email-comment">{r.author.email}</div> 
             <div className="content-comment">{r.content}</div>
@@ -140,6 +142,7 @@ function PostDetail(){
                 await deleteComment(r._id);
                 
             }}></div>
+            </div>
             </div>
         ))
         )}

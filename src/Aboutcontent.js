@@ -6,7 +6,7 @@ function AboutContent() {
     <div className="about-container">
       <div className='title-about'>About</div>
       <div className='content-about'>
-        <div class="about-intro">
+        <div className="about-intro">
     <p>
       Welcome to our community-driven secondhand marketplace dashboard.
       This platform is designed to make buying and selling pre-owned items
@@ -14,7 +14,7 @@ function AboutContent() {
     </p>
   </div>
 
-  <div class="about-account">
+  <div className="about-account">
     <p>
       Users can easily sign up and create an account, and with the integrated login system,
       they can securely access their personalized dashboard at any time.
@@ -27,7 +27,7 @@ function AboutContent() {
     </p>
   </div>
 
-  <div class="about-features">
+  <div className="about-features">
     <p>
       Once logged in, members are able to create posts to list items they wish to sell
       or browse through available listings from other users.
@@ -39,7 +39,7 @@ function AboutContent() {
     </p>
   </div>
 
-  <div class="about-summary">
+  <div className="about-summary">
     <p>
       This combination of account security, search capabilities, and filtering tools
       creates a user-friendly marketplace environment where people can confidently trade
