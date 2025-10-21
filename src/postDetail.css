@@ -26,7 +26,7 @@
     background-size: cover;
     cursor: pointer;
     transition: 0.1s;
-    margin-left: 100px;
+    margin-left: 7%;
 }
 .back-postdetail:hover {
     filter: invert(0.5);
@@ -163,13 +163,13 @@
     background-image: url('../public/profile.png');
     background-size: cover;
     background-repeat: no-repeat;
-    width: 80px;
+    min-width: 80px;
     height: 80px;
     filter: invert(0.6);
     margin-right: 15px;
 }
 .holder-emailContentAndBin-comment {
-    max-width: 100vw;
+    width: 100%;
     display: flex;
     align-items: center;
     gap: 0%;
@@ -178,6 +178,7 @@
     display: flex;
     flex-direction: column;
     gap: 5px;
+    width: 60%;
 }
 .email-comment {
     font-size: 35px;
@@ -185,6 +186,7 @@
 }
 .content-comment {
     font-size: 25px;
+    min-width: 50%;
 }
 .bin-comment {
     background-image: url('../public/bin.png');
@@ -193,6 +195,7 @@
     width: 40px;
     height: 40px;
     cursor: pointer;
+    margin-left: 30%;
 }
 .bin-comment:hover {
     filter: invert(23%) sepia(94%) saturate(7482%) hue-rotate(357deg) brightness(97%) contrast(122%);
@@ -207,5 +210,116 @@
     }
     100% {
         transform: rotate(720deg) scale(1);
+    }
+}
+@media (max-width: 1300px) {
+    .holder-img-postdetail {
+        max-width: 60vw;
+    }
+}
+@media (max-width: 700px) {
+    .back-postdetail {
+        width: 60px;
+        height: 60px;
+    }
+    .holder-img-postdetail {
+        max-width: 70vw;
+    }
+    .profile-postdetail {
+        width: 55px;
+        height: 55px;
+    }
+    .author-postdetail {
+        font-size: 30px;
+    }
+    .price-postdetail {
+        font-size: 30px;
+    }
+    .title-postdetail {
+        font-size: 30px;
+    }
+    .content-postdetail {
+        font-size: 18px;
+    }
+    .title-comments {
+        font-size: 30px;
+    }
+    .textarea-comment {
+        font-size: 15px;
+        height: 50px;
+        width: 70vw;
+    }
+    .submit {
+        font-size: 15px;
+        padding: 12px 22px;
+        left: 28vw;
+    }
+    .profile-comment {
+        min-width: 50px;
+        height: 50px;
+    }
+    .email-comment {
+        font-size: 25px;
+    }
+    .content-comment {
+        font-size: 15px;
+    }
+    .bin-comment {
+        width: 30px;
+        height: 30px;
+    }
+}
+@media (max-width: 420px) {
+    .back-postdetail {
+        width: 50px;
+        height: 50px;
+    }
+    .holder-img-postdetail {
+        max-width: 80vw;
+    }
+    .profile-postdetail {
+        width: 42px;
+        height: 42px;
+    }
+    .author-postdetail {
+        font-size: 23px;
+    }
+    .price-postdetail {
+        font-size: 23px;
+    }
+    .title-postdetail {
+        font-size: 23px;
+    }
+    .content-postdetail {
+        font-size: 15px;
+    }
+    .title-comments {
+        font-size: 23px;
+    }
+    .textarea-comment {
+        font-size: 15px;
+        height: 50px;
+        width: 70vw;
+        padding: 15px;
+    }
+    .submit {
+        font-size: 15px;
+        padding: 12px 22px;
+        left: 15vw;
+    }
+    .profile-comment {
+        min-width: 30px;
+        height: 30px;
+    }
+    .email-comment {
+        font-size: 20px;
+    }
+    .content-comment {
+        font-size: 13px;
+        min-width: 140%;
+    }
+    .bin-comment {
+        width: 20px;
+        height: 20px;
     }
 }
