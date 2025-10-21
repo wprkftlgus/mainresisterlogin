@@ -1,6 +1,7 @@
 # 🖥 MERN Full-Stack Project: Posts & Comments Dashboard
 <img width="1920" height="946" alt="1" src="https://github.com/user-attachments/assets/9dad510e-0bad-414b-aa82-edc3d0dd6fd0" />
 <img width="1113" height="830" alt="2" src="https://github.com/user-attachments/assets/52e70ba3-e271-4fbf-9123-353bcb08723f" />
+<img width="585" height="864" alt="way" src="https://github.com/user-attachments/assets/00325f04-de4d-4a0b-aa2d-5ce97169a01a" />
 <img width="693" height="830" alt="3" src="https://github.com/user-attachments/assets/ec3ba5f4-9ae3-4cda-9c2a-bc35e68a0680" />
 
 # **🌐 Live Website**
