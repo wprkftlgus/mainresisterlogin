@@ -7,7 +7,7 @@ import CreatePost from './CreatePost';
 import About from './about';
 import PostDetail from './postDetail';
 import Profile from './profile';
-
+import EditPost from './EditPost';
 
 
 function App() {
@@ -21,6 +21,7 @@ function App() {
         <Route path='/About' element={<About />}></Route>
         <Route path='/post/:id' element={<PostDetail />}></Route>
         <Route path='/profile' element={<Profile />}></Route>
+        <Route path='/post/edit/:id' element={<EditPost />}></Route>
       </Routes>
     </Router>
   );

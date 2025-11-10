@@ -144,6 +144,9 @@ function Dashboardcontent(){
         <div className='By'>By</div>
         <div className='author-post'>{post.author.email}</div>
       </div>
+      <div className='edit' onClick={(e) => {
+        e.stopPropagation();
+        navigate(`/post/edit/${post._id}`)}}></div>
       <img className='bin' onClick={(e) => {
         e.stopPropagation();
         handleDeletePost(post._id)}} src='/bin.png' />

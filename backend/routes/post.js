@@ -102,4 +102,12 @@ router.delete('/deleteAllPost' , authMiddleware, async (req, res) => {
         res.status(500).json({ error: 'failed to delete!'})
     }
 })
+
+router.put('/edit/:id', authMiddleware, async (req, res) => {
+    try{
+
+    } catch(err){
+        res.status(500).json({ error: 'Failed to edit!'})
+    }
+})
 module.exports = router;
