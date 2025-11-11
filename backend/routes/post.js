@@ -44,6 +44,8 @@ router.get('/postDetail/:id', async (req,res) => {
     }
 });
 
+
+
 router.get('/', async (req, res) => {
     try {
         const posts = await Post.find().populate('author', 'username email').sort({ createdAt: -1});
@@ -103,9 +105,29 @@ router.delete('/deleteAllPost' , authMiddleware, async (req, res) => {
     }
 })
 
-router.put('/edit/:id', authMiddleware, async (req, res) => {
-    try{
+router.get('/editAuthCheck/:id', authMiddleware, async (req, res) => {
+    try {
+        const 
+    } catch(err){
 
+    }
+})
+
+router.put('/update/:id', authMiddleware, uploadMiddleware, async (req, res) => {
+    try{
+        const { id } = req.params;
+        const userId = req.user.id;
+        const post = await Post.findById(id);
+        if(userId !== post.author.toString()){
+            return res.status(401).json({ error: 'You are not allowed to edit others post'})
+        }
+        const { title, content, price, file } = req.body;
+        const updatedPost = await Post.findByIdAndUpdate(
+            req.params.id,
+            { title, content, price, file },
+            { new: true }
+        );
+        res.json(updatedPost);
     } catch(err){
         res.status(500).json({ error: 'Failed to edit!'})
     }

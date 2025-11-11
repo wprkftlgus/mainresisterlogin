@@ -52,8 +52,8 @@ function EditPost(){
         formData.append('price', price);
         formData.append('file', file);
 
-        const res = await fetch(`${API_URL}/api/posts/create`, {
-            method: 'POST' ,
+        const res = await fetch(`${API_URL}/api/posts/update/${id}`, {
+            method: 'PUT' ,
             headers: { 'Authorization': `Bearer ${token}`},
             body: formData
         });

@@ -146,7 +146,25 @@ function Dashboardcontent(){
       </div>
       <div className='edit' onClick={(e) => {
         e.stopPropagation();
-        navigate(`/post/edit/${post._id}`)}}></div>
+        const handleEdit = async () => {
+          try{
+            const res = await fetch(`${API_URL}/api/posts/editAuthCheck/${id}`, {
+              method: 'GET',
+                headers: {
+                    'Content-Type' : 'application/json',
+                    'Authorization': `Bearer ${token}`,
+                },
+                body: JSON.stringify({ id: postId})
+            });
+            if(res.ok){
+              navigate(`/post/edit/${post._id}`);
+            }
+          } catch (err){
+
+          }
+          handleEdit();
+        }
+        }}></div>
       <img className='bin' onClick={(e) => {
         e.stopPropagation();
         handleDeletePost(post._id)}} src='/bin.png' />
