@@ -105,13 +105,7 @@ router.delete('/deleteAllPost' , authMiddleware, async (req, res) => {
     }
 })
 
-router.get('/editAuthCheck/:id', authMiddleware, async (req, res) => {
-    try {
-        const 
-    } catch(err){
 
-    }
-})
 
 router.put('/update/:id', authMiddleware, uploadMiddleware, async (req, res) => {
     try{
