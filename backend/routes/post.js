@@ -105,7 +105,23 @@ router.delete('/deleteAllPost' , authMiddleware, async (req, res) => {
     }
 })
 
-
+router.get('/editAuthCheck/:id', authMiddleware, async (req, res) => {
+    try {
+        const { id } = req.params;
+        const userId = req.user.id;
+        const post = await Post.findById(id);
+        if(!post){
+            return res.status(404).json({ error: 'Post not found' });
+        }
+        if(userId == post.author){
+            res.json({ message: 'Allowed to edit'});
+        } else{
+             return res.status(403).json({ error: 'You are not allowed to edit this post' });
+        }
+    } catch(err){
+        res.status(500).json({ error: 'You are not allowed to edit other post'});
+    }
+})
 
 router.put('/update/:id', authMiddleware, uploadMiddleware, async (req, res) => {
     try{

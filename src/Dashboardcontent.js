@@ -144,26 +144,23 @@ function Dashboardcontent(){
         <div className='By'>By</div>
         <div className='author-post'>{post.author.email}</div>
       </div>
-      <div className='edit' onClick={(e) => {
+      <div className='edit' onClick={async (e) => {
         e.stopPropagation();
-        const handleEdit = async () => {
           try{
-            const res = await fetch(`${API_URL}/api/posts/editAuthCheck/${id}`, {
+            const res = await fetch(`${API_URL}/api/posts/editAuthCheck/${post._id}`, {
               method: 'GET',
                 headers: {
                     'Content-Type' : 'application/json',
                     'Authorization': `Bearer ${token}`,
-                },
-                body: JSON.stringify({ id: postId})
+                }                
             });
             if(res.ok){
               navigate(`/post/edit/${post._id}`);
-            }
+            } else {alert('You are not allowed to edit other post!');}
           } catch (err){
 
           }
-          handleEdit();
-        }
+
         }}></div>
       <img className='bin' onClick={(e) => {
         e.stopPropagation();
