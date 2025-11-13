@@ -142,7 +142,7 @@
 .create-post {
     min-width: 120px;
     max-width: 120px;
-    border: 2px solid transparent;
+    border: 1px solid transparent;
     cursor: pointer;
     font-size: 18px;
     font-weight: 600;
@@ -152,9 +152,11 @@
     border-radius: 20px;
     opacity: 0;
     animation: fadein-BottomToTop 1.3s ease 0.8s forwards;
+    transition: 0.2s;
 }
 .create-post:hover {
-    border: 2px solid rgb(0, 0, 0);
+    border: 1px solid rgb(255, 255, 255);
+    filter:brightness(1.1)
 }
 .Subtitle-Dashboard {
     min-width: 1200px;
@@ -227,12 +229,13 @@
     margin-top: 20px;
     border-top: 1px solid rgb(218, 218, 218);
     max-width: 90%;
-    gap: 10%;
+    gap: 2%;
     padding-top: 20px;
 }
 .holder-author-post {
     display: flex;
     gap: 10px;
+    align-items: center;
 }
 .By {
     font-family: "Pacifico", cursive;
@@ -240,8 +243,8 @@
 }
 .author-post {
     font-weight: 500;
-    font-size: 25px;
-    max-width: 5rem;
+    font-size: 20px;
+    max-width: 4rem;
     overflow: hidden;
     text-overflow: ellipsis;
 }
@@ -255,11 +258,12 @@
 }
 .edit {
     background-image: url('../public/edit.png');
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    margin-left: 60%;
 }
 .edit:hover {
     filter: invert(0.5);
